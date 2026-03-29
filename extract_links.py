@@ -1,0 +1,206 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
+
+import csv
+import json
+import os
+import re
+from collections import defaultdict
+
+FTML_DIR = os.path.join(os.path.dirname(__file__), "ftml")
+FILE_LIST = os.path.join(os.path.dirname(__file__), "file-list.csv")
+OUTPUT = os.path.join(os.path.dirname(__file__), "data.json")
+
+DOMAIN_PATTERN = re.compile(
+    r"https?://(?:scp-jp\.wikidot\.com|ja\.scp-wiki\.net)/"
+)
+
+# マジックURIサフィックス除去
+MAGIC_URI_PATTERN = re.compile(
+    r"/(title|noredirect|tags|parentPage|norender)/.*$"
+)
+
+# パターンA: [[[...]]] 形式（URLを含む [[[*http://...]]] も対象）
+PATTERN_A = re.compile(r"\[\[\[(\*?[^\]|#\n]+?)(?:\|[^\]]*?)?\]\]\]")
+
+# パターンB: [http://... text] または [*http://... text]（対象ドメインのみ）
+PATTERN_B = re.compile(
+    r"\[\*?https?://(?:scp-jp\.wikidot\.com|ja\.scp-wiki\.net)/([^\s\]\|]+)[^\]]*\]"
+)
+
+# パターンC: 裸URL（テキスト内に直接書かれた対象ドメインのURL）
+PATTERN_C = re.compile(
+    r"(?<!\[)\*?https?://(?:scp-jp\.wikidot\.com|ja\.scp-wiki\.net)/([^\s\]\|<\n]+)"
+)
+
+
+def normalize_url(raw: str) -> str:
+    """生のリンクテキストを正規化してURLスラグ形式に変換する。"""
+    url = raw.strip()
+
+    # 先頭の * を除去
+    if url.startswith("*"):
+        url = url[1:]
+
+    # ドメイン部を除去してパスのみ残す
+    url = DOMAIN_PATTERN.sub("", url)
+
+    # 先頭の / を除去
+    url = url.lstrip("/")
+
+    # ハッシュ除去
+    url = re.sub(r"#.*$", "", url)
+
+    # マジックURI除去
+    url = MAGIC_URI_PATTERN.sub("", url)
+
+    # 末尾スラッシュ除去
+    url = url.rstrip("/")
+
+    # 小文字化
+    url = url.lower()
+
+    # スペース → - 変換
+    url = url.replace(" ", "-")
+
+    return url
+
+
+def extract_links_from_file(content: str) -> list[str]:
+    """ftmlコンテンツからリンク先URLスラグのリストを返す。"""
+    found = []
+
+    # パターンA
+    for m in PATTERN_A.finditer(content):
+        raw = m.group(1).strip()
+        normalized = normalize_url(raw)
+        found.append(normalized)
+
+    # パターンB
+    for m in PATTERN_B.finditer(content):
+        raw = m.group(1)
+        normalized = normalize_url(raw)
+        found.append(normalized)
+
+    # パターンC（パターンBと重複しないように、単純な裸URLのみ対象）
+    for m in PATTERN_C.finditer(content):
+        raw = m.group(1)
+        normalized = normalize_url(raw)
+        found.append(normalized)
+
+    return found
+
+
+def parse_file_list(path: str) -> list[dict]:
+    """file-list.csv を読み込む。
+    著者フィールドが {author1,author2} 形式でカンマを含む場合があるため、
+    行全体を正規表現でパースする。
+    """
+    # url,title,author,createdAt の4フィールド。
+    # author は {..} で囲まれたカンマ含み文字列の場合がある。
+    # 先頭から url(,) title(,) author(,) createdAt として最後の / 区切り日付を末尾から取る。
+    entries = []
+    with open(path, encoding="utf-8") as f:
+        lines = f.readlines()
+
+    header = True
+    for line in lines:
+        line = line.rstrip("\n")
+        if header:
+            header = False
+            continue
+        if not line.strip() or line.strip().startswith("#"):
+            continue
+
+        # 末尾から createdAt（YYYY/M/D 形式）を取り出す
+        # 例: "arukikata-kai,「SCP財団」の歩き方 改,{KABOOM1103,Tetsu1,...},2024/5/8"
+        date_match = re.search(r",(\d{4}/\d{1,2}/\d{1,2})$", line)
+        if not date_match:
+            continue
+        created_at = date_match.group(1)
+        rest = line[: date_match.start()]  # url,title,author 部分
+
+        # url は先頭のカンマ区切り1つ目
+        first_comma = rest.index(",")
+        url_slug = rest[:first_comma].strip()
+        rest2 = rest[first_comma + 1 :]  # title,author 部分
+
+        # title は次のカンマまで（著者は残り全部）
+        second_comma = rest2.index(",")
+        title = rest2[:second_comma].strip()
+        author = rest2[second_comma + 1 :].strip()
+
+        entries.append(
+            {
+                "url": url_slug,
+                "title": title,
+                "author": author,
+                "createdAt": created_at,
+            }
+        )
+    return entries
+
+
+def main() -> None:
+    # file-list.csv を読み込み
+    nodes = []
+    known_urls: set[str] = set()
+    for row in parse_file_list(FILE_LIST):
+        url_slug = row["url"].strip()
+        if not url_slug or url_slug.startswith("#"):
+            continue
+        created_at = row["createdAt"].strip()
+        year = int(created_at.split("/")[0])
+        nodes.append(
+            {
+                "id": url_slug,
+                "title": row["title"].strip(),
+                "url": f"http://scp-jp.wikidot.com/{url_slug}",
+                "author": row["author"].strip(),
+                "createdAt": created_at,
+                "year": year,
+            }
+        )
+        known_urls.add(url_slug)
+
+    # ftmlファイルを処理してリンクを集約
+    # link_counts[(source, target)] = count
+    link_counts: dict[tuple[str, str], int] = defaultdict(int)
+
+    for node in nodes:
+        ftml_path = os.path.join(FTML_DIR, f"{node['id']}.ftml")
+        if not os.path.exists(ftml_path):
+            continue
+        with open(ftml_path, encoding="utf-8") as f:
+            content = f.read()
+
+        targets = extract_links_from_file(content)
+        source = node["id"]
+        for target in targets:
+            # known_urlsに存在しないリンクは無視
+            if target not in known_urls:
+                continue
+            # 自己リンクは除外
+            if target == source:
+                continue
+            link_counts[(source, target)] += 1
+
+    links = [
+        {"source": src, "target": tgt, "count": cnt}
+        for (src, tgt), cnt in sorted(link_counts.items())
+    ]
+
+    data = {"nodes": nodes, "links": links}
+
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print(f"nodes: {len(nodes)}")
+    print(f"links: {len(links)}")
+    print("data.json を生成しました。")
+
+
+if __name__ == "__main__":
+    main()
