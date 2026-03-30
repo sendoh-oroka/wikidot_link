@@ -672,6 +672,11 @@
       "count": 1
     },
     {
+      "source": "frequently-asked-questions",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
       "source": "glossary-for-new-site-members-jp",
       "target": "about-the-scp-foundation",
       "count": 2
