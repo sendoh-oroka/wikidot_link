@@ -659,7 +659,7 @@ fetch('./data.json').then(r => r.json()).then(data => {
     d.fx = null; d.fy = null;
   }
 
-  // ---- 統合フィルター ----
+ // ---- 統合フィルター ----
   function applyAllFilters() {
     if (!nodeSelection) return;
 
@@ -701,22 +701,38 @@ fetch('./data.json').then(r => r.json()).then(data => {
       });
     }
 
+    // 【追加】各ノードの最終的な表示状態を保存するMap
+    const nodeVisible = new Map();
+
     nodeSelection.each(function(d) {
       const node = d3.select(this);
 
       const isSelected = selectedIds.has(d.id);
       const isMutualLinked = linkedMutual.has(d.id);
-      const isTarget = linkedTargets.has(d.id);
-      const isSource = linkedSources.has(d.id);
+      
+      // 【変更1】相互リンクのみ表示の際、単方向のリンク先/元をハイライト対象から除外する
+      const isTarget = !mutualOnly && linkedTargets.has(d.id);
+      const isSource = !mutualOnly && linkedSources.has(d.id);
       const isConnected = isSelected || isMutualLinked || isTarget || isSource;
 
-      const passSelection = !hasSelection || isConnected;
       const passYear = !hasYear || d.year <= yearFilterVal;
       const passTitleSearch = !hasTitleSearch || matchesTitleSearch(d, qt);
       const passAuthorSearch = !hasAuthorSearch || matchesAuthorSearch(d, qa);
       const passFoundation = !excludeFoundation || !isFoundationAuthor(d.author);
       const passMutual = !mutualOnly || mutualNodeIds.has(d.id);
-      const visible = passSelection && passYear && passTitleSearch && passAuthorSearch && passFoundation && passMutual;
+      const strictFilters = passYear && passFoundation && passMutual;
+
+      let visible = false;
+
+      if (hasSelection) {
+        visible = isConnected && strictFilters;
+      } else {
+        // 未選択時は各種フィルタの条件をすべて適用
+        visible = strictFilters && passTitleSearch && passAuthorSearch;
+      }
+
+      // 状態を保存（リンクの透過処理で使用）
+      nodeVisible.set(d.id, visible);
 
       node.select('circle')
         .attr('fill', isSelected ? '#808080'
@@ -751,17 +767,24 @@ fetch('./data.json').then(r => r.json()).then(data => {
         const tid = linkTgt(l);
         const link = d3.select(this);
 
+        // 【変更2】両端のノードのいずれかが「暗く」なっている場合、リンクも暗くする
+        // （これにより年フィルタや検索フィルタで除外されたノードの矢印が暗くなります）
+        if (!nodeVisible.get(sid) || !nodeVisible.get(tid)) {
+          link.attr('stroke', '#555').attr('opacity', 0.05)
+            .attr('marker-end', 'url(#arrow-default)')
+            .attr('marker-start', '');
+          return; // 以降の処理をスキップ
+        }
+
         if (hasSelection) {
           const selectedHasSrc = selectedIds.has(sid);
           const selectedHasTgt = selectedIds.has(tid);
 
-          // mutualOnly時、非mutualリンクは常にdimmed
           if (mutualOnly && !l.mutual) {
             link.attr('stroke', '#555').attr('opacity', 0.08)
               .attr('marker-end', 'url(#arrow-default)')
               .attr('marker-start', '');
           } else if (selectedHasSrc && selectedHasTgt) {
-            // 両端が選択されたリンク
             if (l.mutual) {
               link.attr('stroke', '#e05030').attr('opacity', 1)
                 .attr('marker-end', 'url(#arrow-mutual)')
@@ -791,18 +814,15 @@ fetch('./data.json').then(r => r.json()).then(data => {
         } else {
           if (mutualOnly) {
             if (l.mutual) {
-              // 相互リンクは通常表示
               link.attr('stroke', '#555').attr('opacity', 0.8)
                 .attr('marker-end', 'url(#arrow-default)')
                 .attr('marker-start', 'url(#arrow-default-rev)');
             } else {
-              // 非相互リンクはdimmed
               link.attr('stroke', '#555').attr('opacity', 0.08)
                 .attr('marker-end', 'url(#arrow-default)')
                 .attr('marker-start', '');
             }
           } else {
-            // 未選択時: 相互リンクも含めすべて灰色で統一
             link.attr('stroke', '#555').attr('opacity', 0.8)
               .attr('marker-end', 'url(#arrow-default)')
               .attr('marker-start', l.mutual ? 'url(#arrow-default-rev)' : '');
