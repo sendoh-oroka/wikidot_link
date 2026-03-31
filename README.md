@@ -80,21 +80,21 @@ python -m http.server 8000
 新しいガイドページを追加したり、既存ページのデータを更新する場合の手順です。
 
 ```sh
-# 1. ftml/ ディレクトリに新しいftmlファイルを追加
-#    ファイル名は file-list.csv の url フィールドに合わせる（例: new-page.ftml）
-
-# 2. file-list.csv に新しいエントリを追加（末尾の # currentDate 行より前に追加する）
+# 1. file-list.csv に新しいエントリを追加（末尾の # currentDate 行より前に追加する）
 #    フォーマット: url,title,author,createdAt
 #    例:
 #    new-page,新しいガイド,SCP財団,2025/01/01
 
-# 3. data.json を再生成（方法A: 全ファイルを処理）
+# 2. data.json を更新
+#    方法A: 特定のファイルのみ指定（data.json が存在する場合は差分更新）
+uv run extract_links.py new-page.ftml another-page.ftml
+#    → ftml/ が存在しない場合は自動作成し、指定ファイルをそこへ移動する
+#    → data.json が存在する場合は指定ファイルのノード・リンクのみ更新する
+
+#    方法B: 全ファイルを処理して再生成
 uv run extract_links.py
 
-# 3. data.json を再生成（方法B: 特定のファイルのみ指定）
-uv run extract_links.py ftml/new-page.ftml ftml/another-page.ftml
-
-# 4. コミット・プッシュ
+# 3. コミット・プッシュ
 git add data.json ftml/<新ファイル名>.ftml file-list.csv
 git commit -m "feat: add <ページ名>"
 git push

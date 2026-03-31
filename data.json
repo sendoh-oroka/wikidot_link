@@ -383,6 +383,14 @@
       "author": "SCP財団",
       "createdAt": "2025/10/26",
       "year": 2025
+    },
+    {
+      "id": "meet-the-staff-jp",
+      "title": "スタッフ一覧",
+      "url": "http://scp-jp.wikidot.com/meet-the-staff-jp",
+      "author": "jet0620",
+      "createdAt": "2016/12/25",
+      "year": 2016
     }
   ],
   "links": [
@@ -399,6 +407,11 @@
     {
       "source": "about-the-scp-foundation-for-young",
       "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation-for-young",
+      "target": "meet-the-staff-jp",
       "count": 1
     },
     {
@@ -424,6 +437,11 @@
     {
       "source": "adult-guide",
       "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "meet-the-staff-jp",
       "count": 1
     },
     {
@@ -488,8 +506,18 @@
     },
     {
       "source": "category-policy",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
       "target": "user-component-policy",
       "count": 2
+    },
+    {
+      "source": "co-authored-and-revised-guide-jp",
+      "target": "meet-the-staff-jp",
+      "count": 1
     },
     {
       "source": "co-authored-and-revised-guide-jp",
@@ -510,6 +538,11 @@
       "source": "collaboration-guide-jp",
       "target": "how-to-write:post-others",
       "count": 6
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "meet-the-staff-jp",
+      "count": 1
     },
     {
       "source": "collaboration-guide-jp",
@@ -558,6 +591,11 @@
     },
     {
       "source": "contact-staff",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "contact-staff",
       "target": "site-charter",
       "count": 1
     },
@@ -582,6 +620,11 @@
       "count": 1
     },
     {
+      "source": "criticism-policy",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
       "source": "criticism-tips",
       "target": "the-style-of-scp-report",
       "count": 3
@@ -595,6 +638,11 @@
       "source": "custom-theme-policy",
       "target": "licensing-guide",
       "count": 1
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "meet-the-staff-jp",
+      "count": 3
     },
     {
       "source": "custom-theme-policy",
@@ -622,6 +670,11 @@
       "count": 2
     },
     {
+      "source": "deletions-guide",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
       "source": "discord-guideline",
       "target": "collaboration-guide-jp",
       "count": 1
@@ -629,6 +682,16 @@
     {
       "source": "discord-guideline",
       "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "discord-guideline",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "enforcement-regulations-for-official-events",
+      "target": "meet-the-staff-jp",
       "count": 1
     },
     {
@@ -682,6 +745,11 @@
       "count": 1
     },
     {
+      "source": "frequently-asked-questions",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
       "source": "glossary-for-new-site-members-jp",
       "target": "about-the-scp-foundation",
       "count": 2
@@ -714,6 +782,11 @@
     {
       "source": "glossary-for-new-site-members-jp",
       "target": "licensing-guide",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "meet-the-staff-jp",
       "count": 2
     },
     {
@@ -814,6 +887,11 @@
     {
       "source": "how-to-write:how-to-write",
       "target": "how-to-write:post-translation",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "meet-the-staff-jp",
       "count": 2
     },
     {
@@ -1243,6 +1321,11 @@
     },
     {
       "source": "how-to-write:post-translation",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "how-to-write:post-translation",
       "target": "sandbox3guide",
       "count": 1
     },
@@ -1278,6 +1361,11 @@
     },
     {
       "source": "image-use-policy",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "image-use-policy",
       "target": "storage-guide",
       "count": 1
     },
@@ -1289,6 +1377,16 @@
     {
       "source": "licensing-guide",
       "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "licensing-guide",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "meet-the-staff-jp",
+      "target": "contact-staff",
       "count": 1
     },
     {
@@ -1348,6 +1446,11 @@
     },
     {
       "source": "other-link-hub",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
       "target": "new-site-members-be-critics",
       "count": 1
     },
@@ -1359,6 +1462,11 @@
     {
       "source": "other-link-hub",
       "target": "tips-for-translating-to-japanese",
+      "count": 1
+    },
+    {
+      "source": "rate-module-design-guide",
+      "target": "meet-the-staff-jp",
       "count": 1
     },
     {
@@ -1428,6 +1536,11 @@
     },
     {
       "source": "sandbox3guide",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "sandbox3guide",
       "target": "other-link-hub",
       "count": 1
     },
@@ -1483,6 +1596,11 @@
     },
     {
       "source": "site-rules",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
       "target": "site-charter",
       "count": 2
     },
@@ -1508,6 +1626,11 @@
     },
     {
       "source": "storage-guide",
+      "target": "meet-the-staff-jp",
+      "count": 4
+    },
+    {
+      "source": "storage-guide",
       "target": "site-rules",
       "count": 2
     },
@@ -1529,6 +1652,11 @@
     {
       "source": "tag-guide",
       "target": "how-to-write:post-goi-format",
+      "count": 2
+    },
+    {
+      "source": "tag-guide",
+      "target": "meet-the-staff-jp",
       "count": 2
     },
     {
@@ -1608,6 +1736,11 @@
     },
     {
       "source": "tag-list",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
       "target": "sandbox3guide",
       "count": 1
     },
@@ -1630,6 +1763,11 @@
       "source": "translation-policy",
       "target": "how-to-write:post-translation",
       "count": 3
+    },
+    {
+      "source": "translation-policy",
+      "target": "meet-the-staff-jp",
+      "count": 2
     },
     {
       "source": "translation-policy",
@@ -1658,6 +1796,11 @@
     },
     {
       "source": "user-component-policy",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "user-component-policy",
       "target": "site-rules",
       "count": 1
     },
@@ -1665,6 +1808,11 @@
       "source": "user-component-policy",
       "target": "tag-list",
       "count": 2
+    },
+    {
+      "source": "vote-policy",
+      "target": "meet-the-staff-jp",
+      "count": 1
     }
   ]
 }

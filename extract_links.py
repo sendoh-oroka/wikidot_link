@@ -144,9 +144,23 @@ def parse_file_list(path: str) -> list[dict]:
     return entries
 
 
+def scan_links(
+    ftml_entries: list[tuple[str, str]], known_urls: set[str]
+) -> dict[tuple[str, str], int]:
+    """ftmlエントリからリンクカウントを返す。"""
+    link_counts: dict[tuple[str, str], int] = defaultdict(int)
+    for source, ftml_path in ftml_entries:
+        with open(ftml_path, encoding="utf-8") as f:
+            content = f.read()
+        for target in extract_links_from_file(content):
+            if target in known_urls and target != source:
+                link_counts[(source, target)] += 1
+    return link_counts
+
+
 def main() -> None:
     # file-list.csv を読み込み
-    nodes = []
+    all_nodes: list[dict] = []
     known_urls: set[str] = set()
     for row in parse_file_list(FILE_LIST):
         url_slug = row["url"].strip()
@@ -154,7 +168,7 @@ def main() -> None:
             continue
         created_at = row["createdAt"].strip()
         year = int(created_at.split("/")[0])
-        nodes.append(
+        all_nodes.append(
             {
                 "id": url_slug,
                 "title": row["title"].strip(),
@@ -166,14 +180,22 @@ def main() -> None:
         )
         known_urls.add(url_slug)
 
-    # ftmlファイルを処理してリンクを集約
-    # link_counts[(source, target)] = count
-    link_counts: dict[tuple[str, str], int] = defaultdict(int)
+    # ftml/ が存在しない場合は作成して引数ファイルを移動
+    arg_paths = sys.argv[1:]
+    if arg_paths and not os.path.isdir(FTML_DIR):
+        os.makedirs(FTML_DIR)
+        moved = []
+        for path in arg_paths:
+            dest = os.path.join(FTML_DIR, os.path.basename(path))
+            os.rename(path, dest)
+            print(f"移動: {path} → {dest}")
+            moved.append(dest)
+        arg_paths = moved
 
     # 処理対象の (slug, ftml_path) リストを構築
     ftml_entries: list[tuple[str, str]] = []
-    if len(sys.argv) > 1:
-        for ftml_path in sys.argv[1:]:
+    if arg_paths:
+        for ftml_path in arg_paths:
             slug = os.path.splitext(os.path.basename(ftml_path))[0]
             if slug not in known_urls:
                 print(f"警告: {slug} はfile-list.csvに含まれていません。スキップします。")
@@ -183,33 +205,45 @@ def main() -> None:
                 continue
             ftml_entries.append((slug, ftml_path))
     elif os.path.isdir(FTML_DIR):
-        for node in nodes:
+        for node in all_nodes:
             ftml_path = os.path.join(FTML_DIR, f"{node['id']}.ftml")
             if os.path.exists(ftml_path):
                 ftml_entries.append((node["id"], ftml_path))
     else:
         print(f"警告: {FTML_DIR} が見つかりません。リンクなしで続行します。")
 
-    for source, ftml_path in ftml_entries:
-        with open(ftml_path, encoding="utf-8") as f:
-            content = f.read()
-        for target in extract_links_from_file(content):
-            if target in known_urls and target != source:
-                link_counts[(source, target)] += 1
+    # data.json が存在し引数指定ありの場合はインクリメンタル更新
+    incremental = arg_paths and os.path.exists(OUTPUT)
+    if incremental:
+        with open(OUTPUT, encoding="utf-8") as f:
+            existing = json.load(f)
+
+        target_slugs = {slug for slug, _ in ftml_entries}
+        # 既存ノードを維持しつつ対象ノードのみ更新
+        nodes_by_id = {n["id"]: n for n in existing["nodes"]}
+        nodes_by_id.update({n["id"]: n for n in all_nodes if n["id"] in target_slugs})
+        nodes = list(nodes_by_id.values())
+
+        # 対象slugのリンクを除いて既存リンクを保持し、再スキャン結果をマージ
+        link_counts: dict[tuple[str, str], int] = defaultdict(int)
+        for link in existing["links"]:
+            if link["source"] not in target_slugs:
+                link_counts[(link["source"], link["target"])] = link["count"]
+        link_counts.update(scan_links(ftml_entries, known_urls))
+    else:
+        nodes = all_nodes
+        link_counts = scan_links(ftml_entries, known_urls)
 
     links = [
         {"source": src, "target": tgt, "count": cnt}
         for (src, tgt), cnt in sorted(link_counts.items())
     ]
 
-    data = {"nodes": nodes, "links": links}
-
     with open(OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump({"nodes": nodes, "links": links}, f, ensure_ascii=False, indent=2)
 
-    print(f"nodes: {len(nodes)}")
-    print(f"links: {len(links)}")
-    print("data.json を生成しました。")
+    print(f"nodes: {len(nodes)}, links: {len(links)}")
+    print("data.json を更新しました。" if incremental else "data.json を生成しました。")
 
 
 if __name__ == "__main__":
