@@ -7,7 +7,16 @@
       "author": "Ikr_4185",
       "createdAt": "2014/11/20",
       "year": 2014,
-      "extracted_links": {}
+      "extracted_links": {
+        "scp-087": 1,
+        "scp-093": 1,
+        "scp-231": 1,
+        "how-to-write-an-scp": 2,
+        "guide-hub": 2,
+        "site-rules": 1,
+        "guide-to-newbies": 1,
+        "archived:zen-and-the-art-of-data-expunged": 1
+      }
     },
     {
       "id": "sakagami-newmembers-guide",
@@ -16,7 +25,49 @@
       "author": "sakagami",
       "createdAt": "2016/7/31",
       "year": 2016,
-      "extracted_links": {}
+      "extracted_links": {
+        "ikr-4185-s-personnel-file": 1,
+        "nanimono-demonai-s-personnel-file": 1,
+        "author:tvfish": 1,
+        "author:boatob": 1,
+        "sakagami002": 2,
+        "guide-for-newbies": 1,
+        "chat-guide": 3,
+        "site-rules": 2,
+        "members-pages-jp": 1,
+        "not-enough-characters": 1,
+        "how-to-write-an-scp": 1,
+        "deletions-guide": 2,
+        "object-classes": 2,
+        "understanding-memetics": 1,
+        "and-this-one-explains-humes": 1,
+        "locker-s-tales-kamiyama1": 1,
+        "scp-2000": 1,
+        "scp-243-jp": 1,
+        "canon-hub": 1,
+        "canon-hub-jp": 1,
+        "scp-001": 1,
+        "scp-001-jp": 1,
+        "foundation-tales-jp": 1,
+        "licensing-guide": 2,
+        "image-use-policy": 2,
+        "so-you-want-to-write-a-humanoid-scp-object": 1,
+        "are-you-good-writer": 2,
+        "faq": 1,
+        "about-the-scp-foundation": 1,
+        "security-clearance-levels": 1,
+        "how-to-write-an-scpscp": 1,
+        "tag-guide": 1,
+        "the-style-of-scp-report": 1,
+        "doing-the-safety-dance": 1,
+        "random-but-useful": 1,
+        "holy-nova-tale-howtodesigncontainment": 1,
+        "mackenzie-tips": 1,
+        "mackenzie-pitfalls": 1,
+        "mackenzie-glossary": 1,
+        "wiki-syntax": 1,
+        "japanese-syntax": 1
+      }
     },
     {
       "id": "are-you-good-writer",
@@ -25,7 +76,19 @@
       "author": "tokage-otoko",
       "createdAt": "2016/3/23",
       "year": 2016,
-      "extracted_links": {}
+      "extracted_links": {
+        "scp-019-jp": 2,
+        "scp-132-jp": 1,
+        "scp-2662": 1,
+        "scp-231": 3,
+        "scp-496-jp": 2,
+        "scp-103-jp": 1,
+        "scp-087": 1,
+        "scp-163": 1,
+        "scp-295-jp": 2,
+        "scp-777-jp": 1,
+        "scp-020-jp": 1
+      }
     },
     {
       "id": "new-site-members-be-critics",
@@ -34,7 +97,18 @@
       "author": "Jiraku_Mogana",
       "createdAt": "2024/8/3",
       "year": 2024,
-      "extracted_links": {}
+      "extracted_links": {
+        "how-to-get-good-feedback-jp": 2,
+        "amnestic-orientation-manual": 2,
+        "discord-guideline": 2,
+        "joke-scps-jp": 1,
+        "are-you-good-writer": 2,
+        "mackenzie-pitfalls": 2,
+        "what-not-to-do": 2,
+        "the-big-list-of-overdone-scp-cliches": 2,
+        "esoteric-syntax": 2,
+        "criticism-tips": 2
+      }
     },
     {
       "id": "how-to-get-better-advice-in-forums-jp",
@@ -43,7 +117,25 @@
       "author": "Tark_IOL",
       "createdAt": "2022/10/6",
       "year": 2022,
-      "extracted_links": {}
+      "extracted_links": {
+        "site-rules": 1,
+        "criticism-policy": 2,
+        "discord-guideline": 1,
+        "guide-hub": 2,
+        "other-link-hub": 2,
+        "how-to-wikidot": 2,
+        "how-to-get-good-feedback-jp": 2,
+        "planning-for-your-first-step": 1,
+        "glossary-for-new-site-members-jp": 1,
+        "wiki-syntax:startpage": 1,
+        "japanese-syntax": 1,
+        "esoteric-syntax": 2,
+        "scp-style-resource": 1,
+        "wikipedia-september-11-attacks-1998-ver": 1,
+        "rigaiken-repo-research-proposal-2028-03-13-in-98": 1,
+        "for-better-discussion": 2,
+        "wiki-syntax:include": 1
+      }
     },
     {
       "id": "arukikata-kai",
@@ -52,7 +144,296 @@
       "author": "{KABOOM1103,Tetsu1,kagayoh,hikikakuanaguma,Hoojiro_san,Hashibutopolymer}",
       "createdAt": "2024/5/8",
       "year": 2024,
-      "extracted_links": {}
+      "extracted_links": {
+        "scp-series": 1,
+        "scp-series-jp": 1,
+        "scp-076": 1,
+        "scp-173": 1,
+        "licensing-guide": 1,
+        "scp-682": 1,
+        "scp-914": 1,
+        "scp-6287": 1,
+        "scp-006-jp": 1,
+        "scp-100-jp": 1,
+        "scp-120-jp": 1,
+        "scp-2048-jp": 1,
+        "scp-2188-jp": 1,
+        "scp-1562": 1,
+        "scp-3633": 1,
+        "scp-6794": 1,
+        "scp-141-jp": 1,
+        "scp-289-jp": 1,
+        "scp-300-jp": 1,
+        "scp-536-jp": 1,
+        "scp-1019-jp": 1,
+        "scp-1816-jp": 1,
+        "scp-cn-2987": 1,
+        "scp-348": 1,
+        "scp-1281": 1,
+        "scp-2265": 1,
+        "scp-2295": 1,
+        "scp-4999": 1,
+        "scp-194-jp": 1,
+        "scp-243-jp": 1,
+        "scp-548-jp": 1,
+        "scp-1340-jp": 1,
+        "scp-2040-jp": 1,
+        "scp-1370": 1,
+        "scp-3092": 1,
+        "scp-4759": 1,
+        "scp-374-jp": 1,
+        "scp-1475-jp": 1,
+        "scp-1570-jp": 1,
+        "scp-safe-j": 1,
+        "scp-j": 1,
+        "scp-666-jp-j": 1,
+        "scp-1210-jp-j": 1,
+        "scp-1841-ex": 1,
+        "scp-1733": 1,
+        "scp-5726": 1,
+        "scp-6502": 1,
+        "scp-246-jp": 1,
+        "scp-587-jp": 1,
+        "scp-1392-jp": 1,
+        "scp-1573-jp": 1,
+        "scp-1706-jp": 1,
+        "scp-2224-jp": 1,
+        "scp-2368-jp": 1,
+        "scp-2687-jp": 1,
+        "scp-999": 1,
+        "scp-1171": 1,
+        "scp-3338": 1,
+        "scp-3375": 1,
+        "scp-3892": 1,
+        "scp-5031": 1,
+        "scp-132-jp": 1,
+        "scp-1084-jp": 1,
+        "scp-1186-jp": 1,
+        "scp-1371-jp": 1,
+        "scp-1295": 1,
+        "scp-2513": 1,
+        "scp-4975": 1,
+        "scp-115-jp": 1,
+        "scp-830-jp": 1,
+        "scp-1211-jp": 1,
+        "scp-1535-jp": 1,
+        "scp-2050-jp": 1,
+        "scp-cn-500": 1,
+        "scp-cn-900": 1,
+        "scp-1147": 1,
+        "scp-3671": 1,
+        "scp-4342": 1,
+        "scp-5283": 1,
+        "scp-010-jp": 1,
+        "scp-207-jp": 1,
+        "scp-794-jp": 1,
+        "scp-1100-jp": 1,
+        "scp-2816-jp": 1,
+        "scp-087": 1,
+        "scp-093": 1,
+        "scp-1689": 1,
+        "scp-3074": 1,
+        "scp-7819": 1,
+        "scp-557-jp": 1,
+        "scp-1065-jp": 1,
+        "scp-1452-jp": 1,
+        "scp-1777-jp": 1,
+        "scp-1783-jp": 1,
+        "scp-3100-jp": 1,
+        "scp-426": 1,
+        "scp-2521": 1,
+        "scp-161-jp": 1,
+        "scp-522-jp": 1,
+        "scp-1045-jp": 1,
+        "scp-1740-jp": 1,
+        "scp-3168-jp": 1,
+        "scp-287-ko": 1,
+        "scp-600-ko": 1,
+        "scp-779-ko": 1,
+        "scp-1958": 1,
+        "scp-2624": 1,
+        "scp-3200": 1,
+        "scp-4823": 1,
+        "scp-077-jp": 1,
+        "scp-508-jp": 1,
+        "scp-646-jp": 1,
+        "scp-798-jp": 1,
+        "scp-1150-jp": 1,
+        "scp-1910-jp": 1,
+        "scp-1012": 1,
+        "scp-1739": 1,
+        "scp-3519": 1,
+        "scp-4183": 1,
+        "scp-5510": 1,
+        "scp-249-jp": 1,
+        "scp-280-jp": 1,
+        "scp-427-jp": 1,
+        "scp-439-jp": 1,
+        "scp-1857-jp": 1,
+        "foundation-tales": 1,
+        "foundation-tales-jp": 1,
+        "bees": 1,
+        "door-knob": 1,
+        "sa-jin-photo": 1,
+        "sunday-dinner": 1,
+        "junen": 1,
+        "punch": 1,
+        "rusubanseizin": 1,
+        "sekimitikun": 1,
+        "tour-of-pripyat": 1,
+        "nishihama": 1,
+        "about-bending-of-the-basic-tense": 1,
+        "dandelions": 1,
+        "ketergrams": 1,
+        "the-nuclear-option": 1,
+        "holy-nova-tale-howtodesigncontainment": 1,
+        "kunstkammer-ocd": 1,
+        "lets-drift-with-me": 1,
+        "mortal-emulator": 1,
+        "night-laboratory": 1,
+        "wallisbroken": 1,
+        "i-thought-you-would-come-back-if-i-made-it-well": 1,
+        "scp-073": 1,
+        "wanderers:little-red-riding-hood": 1,
+        "ohanamikai": 1,
+        "the-posthumous-writings": 1,
+        "what-we-cannot-speak-about-all-k-cal": 1,
+        "hotaruikenohotorinite": 1,
+        "pieta": 1,
+        "hand-down": 1,
+        "tunaidamono": 1,
+        "yesterday-i-read-a-website-called-scp-foundation": 1,
+        "atashi-merisa": 1,
+        "subsequent-treatment": 1,
+        "dr-toraya-t-003": 1,
+        "please-refer-to": 1,
+        "isogasii-zaidan": 1,
+        "yayacamp": 1,
+        "vampire-is-goldenbomber": 1,
+        "sexy-682-2333": 1,
+        "agent-of-n-a-souko": 1,
+        "the-strong-foundation-173": 1,
+        "badbye": 1,
+        "station-staffs-melancholy": 1,
+        "the-common-event": 1,
+        "solitude-jp": 1,
+        "as-an-agent": 1,
+        "its-better-not-to-know-it": 1,
+        "forget-all": 1,
+        "non-anomalous-stone": 1,
+        "hey-teacher": 1,
+        "brief-story": 1,
+        "about-the-scp-foundation": 2,
+        "task-forces": 1,
+        "secure-facilities-locations": 1,
+        "scp-055": 1,
+        "scp-239": 1,
+        "scp-540-jp": 1,
+        "and-this-one-explains-humes": 1,
+        "scp-040-jp": 1,
+        "tag-list": 2,
+        "scp-471-jp": 1,
+        "goc-supplemental-thaumatology": 1,
+        "scp-1918-jp": 1,
+        "security-clearance-levels": 1,
+        "amnestic-orientation-manual": 1,
+        "object-classes": 1,
+        "niveaux-de-menace-des-objets-scp": 1,
+        "groups-of-interest": 1,
+        "groups-of-interest-jp": 1,
+        "scp-1609": 1,
+        "scp-280-fr": 1,
+        "scp-111": 1,
+        "scp-3466": 1,
+        "scp-1176": 1,
+        "scp-030-jp": 1,
+        "scp-838-jp": 1,
+        "scp-1842-jp": 1,
+        "scp-745-jp": 1,
+        "scp-544-jp": 1,
+        "nexus-series": 1,
+        "three-portlands-hub": 1,
+        "canon-hub": 1,
+        "canon-hub-jp": 2,
+        "in-the-clutches-of-life": 1,
+        "ripped-from-the-headlines": 1,
+        "aiad-homescreen": 1,
+        "canon-jp-2": 1,
+        "scp-1701-jp": 1,
+        "1998-hub": 1,
+        "scp-1710-jp": 1,
+        "scp-1134-jp": 1,
+        "shikaikeiun": 1,
+        "scp-2203-jp": 1,
+        "welcome-to-foundation": 1,
+        "series-archive": 1,
+        "series-hub-jp": 1,
+        "murphy-law-hub": 1,
+        "myo-rei-ji": 1,
+        "departments": 1,
+        "departments-jp": 1,
+        "o5-command-dossier": 1,
+        "ethics-committee-orientation": 1,
+        "we-need-to-talk-about-fifty-five": 1,
+        "scp-4467": 1,
+        "scp-1602-jp": 1,
+        "scp-2105-jp": 1,
+        "japanese-area-directors-dossier": 1,
+        "dialogue-department-orientation": 1,
+        "orientation-of-anomaly-discovering-department": 1,
+        "scp-front-jp": 1,
+        "personnel-and-character-dossier": 1,
+        "personnel-and-character-dossier-jp": 1,
+        "scp-963": 1,
+        "agent-ukelele": 1,
+        "scp-408": 1,
+        "scp-1799": 1,
+        "scp-294": 1,
+        "scp-3521": 1,
+        "proceed-containment-after-lunch": 1,
+        "kwana-5": 1,
+        "scp-606-jp": 1,
+        "case1-1-rinmei-jinja": 1,
+        "goi-formats": 1,
+        "goi-formats-jp": 1,
+        "project-proposal-2024-124": 1,
+        "paris-massacre": 1,
+        "spirit-staff-of-eastern-avian-shaman": 1,
+        "spc-796-jp": 1,
+        "critter-profile-clara": 1,
+        "f-a-1030": 1,
+        "yamizushi-file-no403": 1,
+        "collected-item-no0914": 1,
+        "news4pamwac-fox": 1,
+        "koigarezaki-news-911": 1,
+        "log-of-anomalous-items": 1,
+        "log-of-anomalous-items-jp": 1,
+        "deathcontest": 1,
+        "10thannivpages": 1,
+        "awareness-month": 1,
+        "event-archive-jp": 1,
+        "jonathan-ball-s-proposal": 1,
+        "dr-clef-s-proposal": 1,
+        "scp-001-o5": 1,
+        "sandrewswann-s-proposal": 1,
+        "shaggydredlocks-proposal": 1,
+        "lily-s-proposal": 1,
+        "kwana-s-proposal": 1,
+        "ikkeby-v-s-proposal": 1,
+        "meshiochislash-s-proposal": 1,
+        "scp-1730": 1,
+        "scp-4231": 1,
+        "scp-5500": 1,
+        "scp-2975": 1,
+        "pedantique-s-proposal": 1,
+        "scp-6445": 1,
+        "scp-6500": 1,
+        "mishary-s-proposal": 1,
+        "hitsujikaip-s-proposal": 1,
+        "daevite-hub": 1,
+        "r-suika-s-proposal": 1,
+        "scp-1054-fr-j": 1
+      }
     },
     {
       "id": "tips-for-translating-to-japanese",
@@ -61,7 +442,10 @@
       "author": "NorthPole",
       "createdAt": "2021/10/27",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "secure-facilities-locations": 2,
+        "mackenzie-glossary": 2
+      }
     },
     {
       "id": "criticism-tips",
@@ -70,7 +454,15 @@
       "author": "noyama",
       "createdAt": "2018/1/24",
       "year": 2018,
-      "extracted_links": {}
+      "extracted_links": {
+        "scp-652-jp": 1,
+        "scp-173": 1,
+        "scp-973-jp": 1,
+        "scp-1682-jp": 1,
+        "scp-3942": 1,
+        "how-to-write-an-scp": 3,
+        "the-style-of-scp-report": 3
+      }
     },
     {
       "id": "how-to-wikidot",
@@ -79,7 +471,16 @@
       "author": "Ikr_4185",
       "createdAt": "2017/2/19",
       "year": 2017,
-      "extracted_links": {}
+      "extracted_links": {
+        "wiki-syntax:startpage": 1,
+        "how-to-write-an-scp": 1,
+        "wiki-syntax": 2,
+        "tag-guide": 1,
+        "deletions-guide": 1,
+        "site-rules": 1,
+        "guide-for-newbies": 1,
+        "forum:start": 1
+      }
     },
     {
       "id": "how-to-propose",
@@ -88,7 +489,9 @@
       "author": "Nanigashi Sato",
       "createdAt": "2021/1/26",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "for-better-discussion": 1
+      }
     },
     {
       "id": "glossary-for-new-site-members-jp",
@@ -97,7 +500,83 @@
       "author": "Tark_IOL",
       "createdAt": "2021/3/12",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "how-to-get-good-feedback-jp": 2,
+        "understanding-memetics": 2,
+        "author:tark-iol": 2,
+        "meet-the-staff-jp": 2,
+        "site-charter": 2,
+        "licensing-guide": 2,
+        "tag-guide": 2,
+        "scp-444-jp": 2,
+        "crosslinks-guide": 2,
+        "how-to-write:format": 4,
+        "wiki-syntax:startpage": 2,
+        "scp-tcg-jp-j": 2,
+        "sakagami006-portal-of-foundation-shinken": 2,
+        "scp-014-jp-j": 2,
+        "scp-055-de-j": 1,
+        "scp-001": 2,
+        "teubuku": 2,
+        "yidan-hub": 2,
+        "parawatch-hub": 2,
+        "series-archive-jp": 2,
+        "co-authored-and-revised-guide-jp": 2,
+        "collaboration-guide-jp": 2,
+        "members-pages-jp": 2,
+        "international-members-pages": 2,
+        "guide-hub": 2,
+        "other-link-hub": 8,
+        "custom-theme-policy": 2,
+        "news-jp": 2,
+        "contest-archive-jp": 2,
+        "contest-archive": 2,
+        "how-to-propose": 2,
+        "discord-guideline": 2,
+        "clinical-tone-declassified": 2,
+        "bbc18": 2,
+        "mackenzie-pitfalls": 2,
+        "cliche-con-2019": 2,
+        "the-big-list-of-overdone-scp-cliches": 2,
+        "scp-488-jp": 2,
+        "scp-2912-jp": 2,
+        "tools-for-sb3": 8,
+        "hal-aki-achievement-badges": 1,
+        "what-is-it-that-we-lost": 1,
+        "black-highlighter-themes": 2,
+        "anomaly-classification-system-guide": 6,
+        "classification-committee-memo": 6,
+        "scpaaaaaaaaaaaaaaaaaa-jp-j": 2,
+        "object-classes": 3,
+        "scp-ex": 1,
+        "scp-jp-ex": 1,
+        "esoteric-classes-complete-list": 4,
+        "niveaux-de-menace-des-objets-scp": 4,
+        "security-clearance-levels": 3,
+        "secure-facilities-locations-jp": 4,
+        "list-of-foundation-s-internal-departments": 2,
+        "task-forces": 4,
+        "task-forces-jp": 3,
+        "groups-of-interest": 3,
+        "groups-of-interest-jp": 3,
+        "nexus-series": 1,
+        "scp-040-jp": 1,
+        "antimemetics-division-hub": 2,
+        "goc-supplemental-thaumatology": 2,
+        "k-class-scenarios": 2,
+        "k-class-complete-list": 4,
+        "mackenzie-glossary": 4,
+        "about-the-scp-foundation": 2,
+        "secure-facilities-locations": 2,
+        "task-forces-complete-list": 2,
+        "updated-amnestics-guide": 2,
+        "third-law-hub": 2,
+        "aiad-homescreen": 2,
+        "goc-hub-page": 2,
+        "goc-far-east-orientation": 2,
+        "jagpato-hub": 2,
+        "foundation-collective-hub": 2
+      }
     },
     {
       "id": "about-the-scp-foundation",
@@ -106,7 +585,41 @@
       "author": "The Adminstrator",
       "createdAt": "2014/3/17",
       "year": 2014,
-      "extracted_links": {}
+      "extracted_links": {
+        "object-classes": 2,
+        "secure-facilities-locations": 2,
+        "security-clearance-levels": 2,
+        "groups-of-interest": 2,
+        "scp-series": 1,
+        "scp-series-2": 1,
+        "scp-series-3": 1,
+        "scp-series-4": 1,
+        "scp-series-5": 1,
+        "scp-series-6": 1,
+        "foundation-tales": 1,
+        "goi-formats": 1,
+        "series-archive": 1,
+        "canon-hub": 1,
+        "scp-series-jp": 1,
+        "scp-series-jp-2": 1,
+        "scp-series-jp-3": 1,
+        "foundation-tales-jp": 1,
+        "goi-formats-jp": 1,
+        "series-archive-jp": 1,
+        "canon-hub-jp": 1,
+        "series-hub-jp": 1,
+        "history-of-the-universe-hub": 1,
+        "a-brief-history-of-scp-jp": 1,
+        "task-forces": 1,
+        "secure-facilities-locations-jp": 1,
+        "task-forces-jp": 1,
+        "groups-of-interest-jp": 1,
+        "locations-of-interest-jp": 1,
+        "mackenzie-glossary": 1,
+        "other-link-hub": 1,
+        "guide-for-newbies": 1,
+        "how-to-write:how-to-write": 1
+      }
     },
     {
       "id": "faq-jp",
@@ -115,7 +628,28 @@
       "author": "SCP財団",
       "createdAt": "2026/4/1",
       "year": 2026,
-      "extracted_links": {}
+      "extracted_links": {
+        "guide-for-newbies": 5,
+        "about-the-scp-foundation": 1,
+        "scp-173": 1,
+        "licensing-guide": 1,
+        "contact-staff": 1,
+        "arukikata-kai": 1,
+        "top-rated-pages": 1,
+        "tag-search": 2,
+        "how-to-write:how-to-write": 1,
+        "sandbox3guide": 1,
+        "other-link-hub": 1,
+        "scp-series-jp": 1,
+        "scp-series-jp-5": 1,
+        "object-classes": 1,
+        "criticism-policy": 1,
+        "deletions-guide": 2,
+        "site-rule": 1,
+        "discord-guideline": 2,
+        "guide-hub": 1,
+        "forum:start": 1
+      }
     },
     {
       "id": "frequently-asked-questions",
@@ -124,7 +658,12 @@
       "author": "SCP財団",
       "createdAt": "2018/4/25",
       "year": 2018,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "discord-guideline": 1,
+        "esoteric-syntax": 2,
+        "wiki-syntax:html-blocks": 2
+      }
     },
     {
       "id": "other-link-hub",
@@ -133,7 +672,194 @@
       "author": "SCP財団",
       "createdAt": "2020/10/3",
       "year": 2020,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "guide-hub": 1,
+        "about-the-scp-foundation": 1,
+        "object-classes": 1,
+        "security-clearance-levels": 1,
+        "departments": 1,
+        "groups-of-interest": 1,
+        "groups-of-interest-jp": 1,
+        "arukikata": 2,
+        "arukikata-kai": 1,
+        "groups-of-interest-of-the-russian-branch": 1,
+        "groups-of-interest-ko": 1,
+        "groups-of-interest-cn": 1,
+        "groupes-d-interet-fr": 1,
+        "groups-of-interest-pl": 1,
+        "groups-of-interest-es": 1,
+        "groups-of-interest-th": 1,
+        "groups-of-interest-de": 1,
+        "gruppi-di-interesse": 1,
+        "groups-of-interest-ua": 1,
+        "grupos-de-interesse": 1,
+        "groups-of-interest-zh": 1,
+        "locations-of-interest-jp": 1,
+        "secure-facilities-locations": 1,
+        "secure-facilities-locations-jp": 1,
+        "secure-facilities-locations-cn": 1,
+        "deleted:secure-facilities-locations-pl": 1,
+        "siti-italiani": 1,
+        "instalacoes-seguras": 1,
+        "secure-facilities-locations-zh": 1,
+        "task-forces": 1,
+        "task-forces-jp": 1,
+        "mobile-task-forces-pl": 1,
+        "task-forces-complete-list": 1,
+        "k-class-complete-list": 1,
+        "esoteric-classes-complete-list": 1,
+        "departments-complete-list": 1,
+        "goi-complete-list": 1,
+        "personnel-and-character-dossier": 1,
+        "personnel-and-character-dossier-jp": 1,
+        "niveaux-de-menace-des-objets-scp": 1,
+        "organizzazione-interna": 1,
+        "sobre-a-fundacao-lusofona": 1,
+        "the-foundation-and-evil": 1,
+        "understanding-memetics": 1,
+        "the-style-of-scp-report": 1,
+        "how-to-wikidot": 1,
+        "are-you-good-writer": 1,
+        "criticism-tips": 1,
+        "how-to-get-good-feedback-jp": 1,
+        "planning-for-your-first-step": 1,
+        "glossary-for-new-site-members-jp": 1,
+        "the-interviews-about-how-to-write-tales-jp": 1,
+        "how-to-grow-ideas": 1,
+        "new-site-members-be-critics": 1,
+        "walkthrough": 1,
+        "rules-of-thumb": 1,
+        "doing-the-safety-dance": 1,
+        "crosslinks-guide": 1,
+        "how-to-be-scary-without-saying-anything": 1,
+        "so-you-want-to-write-a-humanoid-scp-object": 1,
+        "mackenzie-pitfalls": 1,
+        "mackenzie-containment": 1,
+        "mackenzie-tips": 1,
+        "mackenzie-glossary": 1,
+        "alors-comme-ca-vous-voulez-tourner-des-sushis": 1,
+        "how-to-break-the-world-emotionally": 1,
+        "how-to-write-long-scp": 1,
+        "what-not-to-do": 1,
+        "avoid-the-blackbox": 1,
+        "not-enough-characters": 1,
+        "ideation": 1,
+        "things-what-do-a-thing-an-essay-on-things": 1,
+        "random-but-useful": 1,
+        "standard-cell": 1,
+        "alors-comme-ca-vous-voulez-ecrire-sur-saphir": 1,
+        "conservation-of-wtf": 1,
+        "essays-on-style": 1,
+        "guia-licencias-de-archivos": 1,
+        "the-big-goi-essay": 1,
+        "let-s-write-characters": 1,
+        "you-already-know-what-the-fuck-is-going-on": 1,
+        "zyns-co-authoring-tips": 1,
+        "scp-914-experiment-log-guidelines": 1,
+        "how-not-to-walk-your-dog-pacing-essay": 1,
+        "your-very-first-scp": 1,
+        "essays-by-a-hack-sentence-clauses": 1,
+        "essays-by-a-hack-writing-tales": 1,
+        "essays-by-a-hack-terror": 1,
+        "yourjouney-part-1": 1,
+        "yourjouney-part-2": 1,
+        "yourjouney-part-3": 1,
+        "cliches-and-you-an-educational-film": 1,
+        "mackenzie-stereotypes": 1,
+        "standard-form-for-downvotes": 1,
+        "the-big-list-of-overdone-scp-cliches": 1,
+        "binomen": 1,
+        "intelligence-and-emotions-in-scp-reports": 1,
+        "classified-and-you": 1,
+        "technical-words": 1,
+        "technical-writing": 1,
+        "clinical-tone-declassified": 1,
+        "clinical-vs-complex": 1,
+        "containment-hazard-control": 1,
+        "wiki-syntax": 1,
+        "wiki-syntax:startpage": 1,
+        "japanese-syntax": 1,
+        "esoteric-syntax": 1,
+        "custom-theme-jp": 1,
+        "tools-for-sb3": 1,
+        "scp-style-resource": 1,
+        "css-theme-preparation-tool": 1,
+        "advanced-formatting-and-you": 1,
+        "listpages-magic-and-you": 1,
+        "photoshopping-your-scp": 1,
+        "author-page-tool": 1,
+        "classification-committee-memo": 1,
+        "for-better-discussion": 1,
+        "how-to-propose": 1,
+        "how-to-get-better-advice-in-forums-jp": 1,
+        "how-to-get-good-feedback": 1,
+        "how-to-become-a-better-critic": 1,
+        "butterfly-squad-roster": 1,
+        "a-dime-a-dozen": 1,
+        "an-exercise-in-narrative-based-scps": 1,
+        "shanor-ideas-essay": 1,
+        "zyn-s-crit-tips-i": 1,
+        "zyn-s-crit-tips-ii": 1,
+        "zyn-s-crit-tips-iii": 1,
+        "user-s-contest": 1,
+        "how-to-create-kojinn-wiki": 1,
+        "tips-for-translating-to-japanese": 1,
+        "essay-for-concerto": 1,
+        "lets-start-scp-circle": 1,
+        "extra-community-scp-sites-guide": 1,
+        "how-to-create-a-branch-of-the-scp-foundation": 1,
+        "col-hornby-s-audio-guide": 1,
+        "credits": 1,
+        "attribution-metadata-jp": 1,
+        "scp-calendar-jp": 1,
+        "faq": 1,
+        "usertools": 1,
+        "untranslated-articles": 1,
+        "untranslated-tales": 1,
+        "partially-untranslated-pages": 1,
+        "links": 1,
+        "a-brief-history-of-scp-jp": 1,
+        "history-of-the-universe-hub": 1,
+        "history-of-the-universe-part-one": 1,
+        "history-of-the-universe-part-two": 1,
+        "history-of-the-universe-part-three": 1,
+        "history-of-the-universe-part-four": 1,
+        "history-of-the-universe-part-five": 1,
+        "supplementary-material": 1,
+        "a-brief-history-of-scp-ru": 1,
+        "a-brief-history-of-scp-ko": 1,
+        "about-the-foundation-in-germany": 1,
+        "sul-sito-della-fondazione-italiana": 1,
+        "a-brief-history-of-foundation-rp": 1,
+        "a-history-of-object-classes": 1,
+        "meet-the-administrators-hub": 1,
+        "an-interview-with-\"the-administrator\"": 1,
+        "meet-the-administrators---zyn": 1,
+        "meet-the-administrators---drmagnus": 1,
+        "meet-the-administrators---dexanote": 1,
+        "interviewing-icons-hub": 1,
+        "interviewing-icons---djkaktus": 1,
+        "interviewing-icons---tanhony": 1,
+        "interviewing-icons---rounderhouse": 1,
+        "interviewing-icons---ihp": 1,
+        "interviewing-icons---djoric": 1,
+        "interviewing-icons---the-great-hippo": 1,
+        "interviewing-icons---decibelles": 1,
+        "interviewing-icons---the-exploring-series": 1,
+        "interviewing-icons---the-administrator,-fritzwillie": 1,
+        "interviewing-icons---drclef": 1,
+        "interviewing-icons---kain-pathos-crow": 1,
+        "interviewing-icons---dr-gears": 1,
+        "interviewing-icons---daveyoufool": 1,
+        "news-jp": 1,
+        "tag-search": 1,
+        "tag-translator": 1,
+        "titlesearch": 1,
+        "authorssearch": 1,
+        "search:fulltext": 1,
+        "search:crom": 1
+      }
     },
     {
       "id": "system:join",
@@ -142,7 +868,12 @@
       "author": "Dr Devan",
       "createdAt": "2013/7/8",
       "year": 2013,
-      "extracted_links": {}
+      "extracted_links": {
+        "guide-hub": 8,
+        "most-recently-created": 1,
+        "guide-for-newbies": 4,
+        "contact-staff": 1
+      }
     },
     {
       "id": "contact-staff",
@@ -151,7 +882,21 @@
       "author": "m0ch12uk1",
       "createdAt": "2013/7/8",
       "year": 2013,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 2,
+        "system:members": 1,
+        "system:join": 1,
+        "guide-for-newbies": 1,
+        "faq-jp": 1,
+        "licensing-guide": 1,
+        "image-use-policy": 1,
+        "site-rules": 1,
+        "discord-guideline": 2,
+        "criticism-policy": 1,
+        "how-to-write:how-to-write": 1,
+        "site-charter": 1,
+        "how-to-wikidot": 1
+      }
     },
     {
       "id": "image-use-policy",
@@ -160,7 +905,13 @@
       "author": "yomoda",
       "createdAt": "2014/12/2",
       "year": 2014,
-      "extracted_links": {}
+      "extracted_links": {
+        "licensing-guide": 1,
+        "storage-guide": 1,
+        "credit:cc4": 1,
+        "contact-staff": 2,
+        "meet-the-staff-jp": 2
+      }
     },
     {
       "id": "site-charter",
@@ -169,7 +920,11 @@
       "author": "jet0620",
       "createdAt": "2016/11/1",
       "year": 2016,
-      "extracted_links": {}
+      "extracted_links": {
+        "site-rules": 2,
+        "deletions-guide": 1,
+        "guide-for-newbies": 1
+      }
     },
     {
       "id": "author-page-guide",
@@ -178,7 +933,11 @@
       "author": "hal_aki",
       "createdAt": "2017/6/25",
       "year": 2017,
-      "extracted_links": {}
+      "extracted_links": {
+        "members-pages-jp": 4,
+        "tag-guide": 1,
+        "image-use-policy": 2
+      }
     },
     {
       "id": "vote-policy",
@@ -187,7 +946,9 @@
       "author": "SCP財団",
       "createdAt": "2018/3/17",
       "year": 2018,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1
+      }
     },
     {
       "id": "how-to-write:how-to-write",
@@ -196,7 +957,35 @@
       "author": "Nanimono Demonai",
       "createdAt": "2019/1/3",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "how-to-write:post-tale": 3,
+        "how-to-write:developing-thought": 3,
+        "how-to-write:containment": 2,
+        "how-to-write:writing-style": 2,
+        "deletions-guide": 1,
+        "how-to-write:humanoid": 1,
+        "how-to-write:crosslinks": 1,
+        "how-to-write:format": 1,
+        "how-to-write:template": 1,
+        "other-link-hub": 1,
+        "wiki-syntax": 2,
+        "wiki-syntax:startpage": 1,
+        "how-to-write:post-scp": 2,
+        "standard-template": 1,
+        "how-to-write:post-goi-format": 2,
+        "how-to-write:post-artwork": 2,
+        "how-to-write:post-others": 2,
+        "how-to-write:post-translation": 2,
+        "discord-guideline": 2,
+        "meet-the-staff-jp": 2,
+        "foundation-tales": 1,
+        "avoid-the-blackbox": 1,
+        "how-to-be-scary-without-saying-anything": 1,
+        "doing-the-safety-dance": 1,
+        "crosslinks-guide": 1,
+        "technical-writing": 1,
+        "sandbox3guide": 2
+      }
     },
     {
       "id": "how-to-write:post-scp",
@@ -205,7 +994,28 @@
       "author": "Nanimono Demonai",
       "createdAt": "2019/01/03",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "guide-hub": 1,
+        "storage-guide": 2,
+        "tag-guide": 1,
+        "tag-list": 1,
+        "sandbox3guide": 1,
+        "scp-jp-ex": 4,
+        "scp-xxxx-jp-ex": 1,
+        "how-to-write:post-others": 2,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-tale": 1,
+        "how-to-write:post-artwork": 1,
+        "how-to-write:post-translation": 1,
+        "image-use-policy": 2,
+        "licensing-guide": 1,
+        "scp-series-jp": 1,
+        "scp-series-jp-2": 1,
+        "scp-series-jp-3": 1,
+        "scp-series-jp-4": 1,
+        "scp-series-jp-5": 1
+      }
     },
     {
       "id": "how-to-write:post-tale",
@@ -214,7 +1024,26 @@
       "author": "Nanimono Demonai",
       "createdAt": "2019/01/03",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "storage-guide": 2,
+        "tag-guide": 1,
+        "tag-list": 1,
+        "foundation-tales-jp": 5,
+        "scp-series-1-tales-edition": 1,
+        "scp-series-jp-1-tales-edition": 1,
+        "sandbox3guide": 1,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-scp": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-artwork": 1,
+        "how-to-write:post-others": 1,
+        "how-to-write:post-translation": 1,
+        "document-recovered-from-the-marianas-trench": 2,
+        "scp-front-jp": 2,
+        "silent-forest-ikuragunkan": 2,
+        "image-use-policy": 2,
+        "licensing-guide": 1
+      }
     },
     {
       "id": "how-to-write:post-translation",
@@ -223,7 +1052,35 @@
       "author": "SCP財団",
       "createdAt": "2019/01/03",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 3,
+        "translation-policy": 5,
+        "tag-list": 2,
+        "image-use-policy": 5,
+        "how-to-write:how-to-write": 2,
+        "how-to-write:post-scp": 2,
+        "how-to-write:post-goi-format": 2,
+        "how-to-write:post-tale": 2,
+        "how-to-write:post-artwork": 2,
+        "how-to-write:post-others": 2,
+        "how-to-write:post-translation": 2,
+        "sandbox3guide": 1,
+        "tag-translator": 2,
+        "tag-guide": 1,
+        "custom-theme-policy": 4,
+        "user-component-policy": 2,
+        "discord-guideline": 1,
+        "scp-series": 2,
+        "scp-series-2": 4,
+        "scp-series-4": 2,
+        "scp-series-5": 2,
+        "goi-formats": 1,
+        "foundation-tales": 1,
+        "international-guide": 1,
+        "scp-international": 1,
+        "co-authored-and-revised-guide-jp": 2,
+        "criticism-policy": 1
+      }
     },
     {
       "id": "criticism-policy",
@@ -232,7 +1089,11 @@
       "author": "SCP財団",
       "createdAt": "2019/01/28",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "contact-staff": 1,
+        "adult-guide": 1
+      }
     },
     {
       "id": "sandbox3guide",
@@ -241,7 +1102,21 @@
       "author": "SCP財団",
       "createdAt": "2019/06/01",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 3,
+        "guide-for-newbies": 2,
+        "how-to-write:how-to-write": 3,
+        "other-link-hub": 1,
+        "criticism-policy": 1,
+        "scp-3980": 1,
+        "image-use-policy": 1,
+        "japanese-syntax": 3,
+        "tools-for-sb3": 6,
+        "how-to-wikidot": 6,
+        "wiki-syntax:links": 1,
+        "discord-guideline": 2,
+        "wiki-syntax": 2
+      }
     },
     {
       "id": "delete-collaboration-guide-jp",
@@ -259,7 +1134,9 @@
       "author": "SCP財団",
       "createdAt": "2019/09/30",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1
+      }
     },
     {
       "id": "collaboration-guide-jp",
@@ -268,7 +1145,17 @@
       "author": "SCP財団",
       "createdAt": "2019/12/23",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "foundation-tales-jp": 3,
+        "collaboration-hub-jp": 1,
+        "tag-guide": 1,
+        "tag-list": 1,
+        "discord-guideline": 1,
+        "delete-collaboration-guide-jp": 2,
+        "how-to-write:post-others": 6,
+        "scp-series-jp": 2
+      }
     },
     {
       "id": "co-authored-and-revised-guide-jp",
@@ -277,7 +1164,11 @@
       "author": "SCP財団",
       "createdAt": "2019/12/23",
       "year": 2019,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "attribution-metadata-jp": 1,
+        "site-rules": 1
+      }
     },
     {
       "id": "custom-theme-policy",
@@ -286,7 +1177,15 @@
       "author": "SCP財団",
       "createdAt": "2020/08/24",
       "year": 2020,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 3,
+        "custom-theme-jp": 2,
+        "licensing-guide": 1,
+        "site-rules": 1,
+        "rate-module-design-guide": 1,
+        "credit:start": 1,
+        "discord-guideline": 1
+      }
     },
     {
       "id": "storage-guide",
@@ -295,7 +1194,12 @@
       "author": "SCP財団",
       "createdAt": "2020/10/05",
       "year": 2020,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 4,
+        "site-rules": 2,
+        "contact-staff": 2,
+        "guide-for-newbies\"": 1
+      }
     },
     {
       "id": "how-to-write:post-artwork",
@@ -304,7 +1208,27 @@
       "author": "SCP財団",
       "createdAt": "2021/03/08",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "criticism-policy": 2,
+        "deletions-guide": 2,
+        "silent-forest-ikuragunkan": 2,
+        "how-to-write:post-scp": 5,
+        "how-to-write:post-tale": 5,
+        "storage-guide": 2,
+        "licensing-guide": 2,
+        "image-use-policy": 4,
+        "co-authored-and-revised-guide-jp": 2,
+        "tag-guide": 2,
+        "tag-list": 2,
+        "artwork-jp": 6,
+        "sandbox3guide": 1,
+        "contact-staff": 2,
+        "scp-173": 2,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-others": 1,
+        "how-to-write:post-translation": 1
+      }
     },
     {
       "id": "how-to-write:post-goi-format",
@@ -313,7 +1237,24 @@
       "author": "SCP財団",
       "createdAt": "2021/03/22",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "storage-guide": 2,
+        "tag-guide": 2,
+        "tag-list": 2,
+        "fourth-joicle-donation": 2,
+        "goi-formats-jp": 2,
+        "sandbox3guide": 1,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-scp": 1,
+        "how-to-write:post-tale": 1,
+        "how-to-write:post-artwork": 1,
+        "how-to-write:post-others": 1,
+        "how-to-write:post-translation": 1,
+        "g-b-0183": 1,
+        "collected-item-no0914": 1,
+        "image-use-policy": 2,
+        "licensing-guide": 1
+      }
     },
     {
       "id": "category-policy",
@@ -322,7 +1263,32 @@
       "author": "SCP財団",
       "createdAt": "2021/04/05",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "component:theme": 1,
+        "contact-staff": 3,
+        "members-pages-jp": 1,
+        "author-page-guide": 1,
+        "archived:decommissioned-scps": 1,
+        "event-archive-jp": 1,
+        "credit:start": 1,
+        "info:start": 1,
+        "custom-theme-policy": 1,
+        "user-component-policy": 2,
+        "esoteric-syntax": 1,
+        "scp-1048-ru": 1,
+        "scp-es-138": 1,
+        "collaboration-guide-jp": 2,
+        "delete-collaboration-guide-jp": 1,
+        "log-of-anomalous-items-jp": 1,
+        "log-of-extranormal-events-jp": 1,
+        "log-of-unexplained-locations-jp": 1,
+        "scp-poem": 1,
+        "scp-flavor": 1,
+        "video-log-of-scp-1779-jp": 1,
+        "how-to-write:how-to-write": 1,
+        "wiki-syntax:startpage": 1
+      }
     },
     {
       "id": "enforcement-regulations-for-official-events",
@@ -331,7 +1297,9 @@
       "author": "SCP財団",
       "createdAt": "2021/04/12",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1
+      }
     },
     {
       "id": "licensing-guide",
@@ -340,7 +1308,20 @@
       "author": "SCP財団",
       "createdAt": "2021/08/03",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 3,
+        "cc:faq": 4,
+        "authorssearch": 2,
+        "scp-682": 1,
+        "cc:recommended-practices-for-attribution": 1,
+        "magierakademie-hub": 1,
+        "scp-173": 2,
+        "scp-111": 1,
+        "image-use-policy": 1,
+        "contact-staff": 2,
+        "scp-096": 3,
+        "scp-040-jp": 2
+      }
     },
     {
       "id": "tag-guide",
@@ -349,7 +1330,23 @@
       "author": "SCP財団",
       "createdAt": "2021/09/08",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 2,
+        "tag-list": 7,
+        "tag-search": 1,
+        "how-to-write:post-goi-format": 2,
+        "scp2000jp-contest-hub": 1,
+        "tag-translator": 1,
+        "contact-staff": 1,
+        "object-classes": 1,
+        "series-hub-jp": 1,
+        "canon-hub-jp": 1,
+        "groups-of-interest-jp": 1,
+        "departments-jp": 1,
+        "personnel-and-character-dossier-jp": 1,
+        "locations-of-interest-jp": 2,
+        "collaboration-guide-jp": 1
+      }
     },
     {
       "id": "tag-list",
@@ -358,7 +1355,110 @@
       "author": "SCP財団",
       "createdAt": "2021/09/08",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "how-to-write:post-scp": 1,
+        "niveaux-de-menace-des-objets-scp": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-tale": 3,
+        "how-to-write:post-others": 1,
+        "news-jp": 1,
+        "author-page-guide": 1,
+        "how-to-write:post-artwork": 1,
+        "photo-contest": 1,
+        "custom-theme-policy": 1,
+        "scp-076-2-splash": 1,
+        "scp-076-2": 1,
+        "sandbox3guide": 1,
+        "object-classes": 1,
+        "anomaly-classification-system-guide": 3,
+        "understanding-memetics": 1,
+        "alexylva-university-hub": 1,
+        "ambrose-restaurant-hub": 1,
+        "anderson-robotics-hub": 1,
+        "arcadia-hub": 1,
+        "are-we-cool-yet-hub": 1,
+        "black-queen-hub": 1,
+        "chaos-insurgency-hub": 1,
+        "chicago-spirit": 1,
+        "cotsk-hub": 1,
+        "church-of-the-broken-god-hub": 1,
+        "second-hytoth-hub": 1,
+        "daevite-hub": 1,
+        "deer-college-hub": 1,
+        "dr-wondertainment-hub": 1,
+        "factory-hub": 1,
+        "fifthist-hub": 1,
+        "gamers-against-weed-hub": 1,
+        "goc-hub-page": 1,
+        "greazeburger-incorporated-hub": 1,
+        "gru-p-hub": 1,
+        "herman-fuller-hub": 1,
+        "horizon-initiative-hub": 1,
+        "ijamea-hub": 1,
+        "larue-hub": 1,
+        "manna-charitable-foundation-hub": 1,
+        "marshall-carter-and-dark-hub": 1,
+        "nobody-hub": 1,
+        "oria-hub": 1,
+        "oneiroi": 1,
+        "parawatch-hub": 1,
+        "prometheus-labs-hub": 1,
+        "sarkicism-hub": 1,
+        "serpent-s-hand-hub": 1,
+        "spc-hub": 1,
+        "three-moons-initiative-hub": 1,
+        "unusual-cargo-hub": 1,
+        "unusual-incidents-unit-hub": 1,
+        "valravn-corporation-hub": 1,
+        "vikander-kneed-technical-media-hub": 1,
+        "wandsmen-hub": 1,
+        "wilson-s-wildlife-solutions-hub": 1,
+        "aodaisho-hub": 1,
+        "pamwac-hub": 1,
+        "elma-hub": 1,
+        "brothers-restaurant-hub": 1,
+        "kamikase-ichizoku": 1,
+        "hyper-electric-rescue-organization-hub": 1,
+        "toyoho-hub": 1,
+        "jagpato-hub": 1,
+        "mujin-getsudo-hub": 1,
+        "liferaft-hub": 1,
+        "yamizushi-hub": 1,
+        "yixuehuihub": 1,
+        "gsf": 1,
+        "nirvana-hub": 1,
+        "saphir-centre": 1,
+        "collaboration-guide-jp": 2,
+        "co-authored-and-revised-guide-jp": 4,
+        "scp-001": 1,
+        "adult-guide": 1,
+        "joke-scps-jp": 1,
+        "how-to-write:post-translation": 2,
+        "deletions-guide": 1,
+        "delete-collaboration-guide-jp": 1,
+        "image-use-policy": 1,
+        "log-of-anomalous-items-ru": 1,
+        "i-57-hub": 1,
+        "canon-hub-de": 1,
+        "system/page-tags/tag/o": 2,
+        "system/page-tags/tag/ooo": 2,
+        "system/page-tags/tag/_o": 2,
+        "system/page-tags/tag/_occ": 1,
+        "scp-426": 1,
+        "scp-048": 1,
+        "machina-portal": 1,
+        "tag-guide": 1,
+        "tag-search": 1,
+        "tag-translator": 1,
+        "workbench:illegal-tag-monitoring": 1,
+        "fragment:tag-list-basic": 1,
+        "fragment:tag-list-series": 1,
+        "fragment:tag-list-universe": 1,
+        "fragment:tag-list-event": 1,
+        "fragment:tag-list-unused": 1,
+        "fragment:tag-list-faq": 1
+      }
     },
     {
       "id": "discord-guideline",
@@ -367,7 +1467,12 @@
       "author": "SCP財団",
       "createdAt": "2021/12/23",
       "year": 2021,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 2,
+        "collaboration-guide-jp": 1,
+        "how-to-write:post-artwork": 1,
+        "discord-guideline": 2
+      }
     },
     {
       "id": "user-component-policy",
@@ -376,7 +1481,15 @@
       "author": "SCP財団",
       "createdAt": "2022/08/20",
       "year": 2022,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 3,
+        "custom-theme-policy": 1,
+        "tag-list": 2,
+        "licensing-guide": 1,
+        "site-rules": 1,
+        "discord-guideline": 1,
+        "deletions-guide": 1
+      }
     },
     {
       "id": "adult-guide",
@@ -385,7 +1498,15 @@
       "author": "SCP財団",
       "createdAt": "2022/09/04",
       "year": 2022,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "discord-guideline": 1,
+        "site-rules": 2,
+        "how-to-write:post-translation": 1,
+        "wiki-syntax:collapsible-blocks": 1,
+        "deletions-guide": 1,
+        "how-to-write:post-artwork": 1
+      }
     },
     {
       "id": "how-to-write:post-others",
@@ -394,7 +1515,51 @@
       "author": "SCP財団",
       "createdAt": "2023/02/20",
       "year": 2023,
-      "extracted_links": {}
+      "extracted_links": {
+        "tag-list": 17,
+        "how-to-write:post-tale": 2,
+        "co-authored-and-revised-guide-jp": 2,
+        "sandbox3guide": 10,
+        "tag-guide": 13,
+        "secure-facilities-locations": 1,
+        "log-of-anomalous-items-jp": 1,
+        "log-of-extranormal-events-jp": 1,
+        "collaboration-guide-jp": 5,
+        "delete-collaboration-guide-jp": 1,
+        "guide-hub": 1,
+        "other-link-hub": 6,
+        "licensing-guide": 1,
+        "for-better-discussion": 1,
+        "author-page-guide": 2,
+        "image-use-policy": 3,
+        "user-component-policy": 1,
+        "custom-theme-policy": 2,
+        "custom-theme-jp": 1,
+        "category-policy": 1,
+        "listpages-magic-and-you": 3,
+        "wiki-syntax:comments": 1,
+        "scp-076-2-splash": 1,
+        "scp-076-2": 1,
+        "wiki-syntax:collapsible-blocks": 1,
+        "scp-series-jp": 1,
+        "goi-formats-jp": 1,
+        "foundation-tales-jp": 1,
+        "canon-hub-jp": 4,
+        "series-hub-jp": 4,
+        "groups-of-interest-jp": 2,
+        "locations-of-interest-jp": 2,
+        "anthology-hub-jp": 3,
+        "scp-001": 1,
+        "scp-001-jp": 2,
+        "adult-guide": 2,
+        "joke-scps-jp": 5,
+        "scp-xxxx-jp-j": 1,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-scp": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-artwork": 1,
+        "how-to-write:post-translation": 1
+      }
     },
     {
       "id": "translation-policy",
@@ -403,7 +1568,12 @@
       "author": "SCP財団",
       "createdAt": "2024/04/22",
       "year": 2024,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 2,
+        "how-to-write:post-translation": 3,
+        "tag-guide": 1,
+        "criticism-policy": 1
+      }
     },
     {
       "id": "site-rules",
@@ -412,7 +1582,24 @@
       "author": "SCP財団",
       "createdAt": "2024/08/18",
       "year": 2024,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "licensing-guide": 3,
+        "image-use-policy": 3,
+        "contact-staff": 1,
+        "tag-guide": 2,
+        "vote-policy": 2,
+        "collaboration-guide-jp": 1,
+        "author-page-guide": 2,
+        "members-pages-jp": 1,
+        "tag-list": 1,
+        "forum:start": 1,
+        "enforcement-regulations-for-official-events": 1,
+        "deletions-guide": 1,
+        "criticism-policy": 1,
+        "guide-hub": 2,
+        "site-charter": 2
+      }
     },
     {
       "id": "about-the-scp-foundation-for-young",
@@ -421,7 +1608,12 @@
       "author": "SCP財団",
       "createdAt": "2025/03/28",
       "year": 2025,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "guide-for-newbies": 1,
+        "site-rules": 1,
+        "contact-staff": 1
+      }
     },
     {
       "id": "deletions-guide",
@@ -430,7 +1622,12 @@
       "author": "SCP財団",
       "createdAt": "2025/10/26",
       "year": 2025,
-      "extracted_links": {}
+      "extracted_links": {
+        "meet-the-staff-jp": 1,
+        "delete-collaboration-guide-jp": 2,
+        "author-page-guide": 1,
+        "category-policy": 1
+      }
     },
     {
       "id": "meet-the-staff-jp",
@@ -439,7 +1636,13 @@
       "author": "jet0620",
       "createdAt": "2016/12/25",
       "year": 2016,
-      "extracted_links": {}
+      "extracted_links": {
+        "contact-staff": 1,
+        "author:poshirona": 2,
+        "r-suika-s-proposal": 2,
+        "most-recently-created": 2,
+        "author:stengan774": 3
+      }
     },
     {
       "id": "guide-for-newbies",
@@ -448,7 +1651,27 @@
       "author": "CheshireCheese",
       "createdAt": "2013/8/24",
       "year": 2013,
-      "extracted_links": {}
+      "extracted_links": {
+        "most-recently-created": 1,
+        "system:join": 1,
+        "faq-jp": 1,
+        "criticism-policy": 3,
+        "sandbox3guide": 2,
+        "system:recent-changes": 1,
+        "site-rules": 1,
+        "how-to-write:how-to-write": 2,
+        "vote-policy": 1,
+        "discord-guideline": 2,
+        "foundation-tales-jp": 1,
+        "goi-formats-jp": 1,
+        "artwork-jp": 1,
+        "scp-4231": 1,
+        "other-link-hub": 1,
+        "meet-the-staff-jp": 1,
+        "contact-staff": 1,
+        "tag-list": 1,
+        "image-use-policy": 1
+      }
     },
     {
       "id": "guide-hub",
@@ -457,7 +1680,47 @@
       "author": "CheshireCheese",
       "createdAt": "2013/8/25",
       "year": 2013,
-      "extracted_links": {}
+      "extracted_links": {
+        "about-the-scp-foundation": 1,
+        "about-the-scp-foundation-for-young": 1,
+        "guide-for-newbies": 1,
+        "system:join": 1,
+        "meet-the-staff-jp": 2,
+        "other-link-hub": 1,
+        "site-rules": 1,
+        "licensing-guide": 1,
+        "faq-jp": 1,
+        "vote-policy": 1,
+        "criticism-policy": 1,
+        "how-to-write:how-to-write": 1,
+        "how-to-write:post-scp": 1,
+        "how-to-write:post-goi-format": 1,
+        "how-to-write:post-tale": 1,
+        "how-to-write:post-artwork": 1,
+        "how-to-write:post-others": 1,
+        "how-to-write:post-translation": 1,
+        "translation-policy": 1,
+        "standard-template": 1,
+        "image-use-policy": 1,
+        "tag-guide": 1,
+        "deletions-guide": 1,
+        "sandbox3guide": 1,
+        "storage-guide": 1,
+        "co-authored-and-revised-guide-jp": 1,
+        "collaboration-guide-jp": 1,
+        "delete-collaboration-guide-jp": 1,
+        "adult-guide": 1,
+        "author-page-guide": 1,
+        "rate-module-design-guide": 1,
+        "custom-theme-policy": 1,
+        "user-component-policy": 1,
+        "category-policy": 1,
+        "site-charter": 1,
+        "tag-list": 1,
+        "discord-guideline": 1,
+        "enforcement-regulations-for-official-events": 1,
+        "international-guide": 1
+      }
     },
     {
       "id": "object-classes",
@@ -481,8 +1744,1813 @@
   ],
   "links": [
     {
+      "source": "about-the-scp-foundation",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation",
+      "target": "object-classes",
+      "count": 2
+    },
+    {
+      "source": "about-the-scp-foundation",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation-for-young",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation-for-young",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation-for-young",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "about-the-scp-foundation-for-young",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "adult-guide",
+      "target": "site-rules",
+      "count": 2
+    },
+    {
+      "source": "arukikata-kai",
+      "target": "about-the-scp-foundation",
+      "count": 2
+    },
+    {
+      "source": "arukikata-kai",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "arukikata-kai",
+      "target": "object-classes",
+      "count": 1
+    },
+    {
+      "source": "arukikata-kai",
+      "target": "tag-list",
+      "count": 2
+    },
+    {
+      "source": "author-page-guide",
+      "target": "image-use-policy",
+      "count": 2
+    },
+    {
+      "source": "author-page-guide",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "author-page-guide",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "collaboration-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "category-policy",
+      "target": "contact-staff",
+      "count": 3
+    },
+    {
+      "source": "category-policy",
+      "target": "custom-theme-policy",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "delete-collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "category-policy",
+      "target": "user-component-policy",
+      "count": 2
+    },
+    {
+      "source": "co-authored-and-revised-guide-jp",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "co-authored-and-revised-guide-jp",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "delete-collaboration-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "how-to-write:post-others",
+      "count": 6
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "collaboration-guide-jp",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "contact-staff",
+      "target": "faq-jp",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "how-to-wikidot",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "contact-staff",
+      "target": "site-charter",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "contact-staff",
+      "target": "system:join",
+      "count": 1
+    },
+    {
+      "source": "criticism-policy",
+      "target": "adult-guide",
+      "count": 1
+    },
+    {
+      "source": "criticism-policy",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "criticism-policy",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "criticism-tips",
+      "target": "the-style-of-scp-report",
+      "count": 3
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "rate-module-design-guide",
+      "count": 1
+    },
+    {
+      "source": "custom-theme-policy",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "deletions-guide",
+      "target": "author-page-guide",
+      "count": 1
+    },
+    {
+      "source": "deletions-guide",
+      "target": "category-policy",
+      "count": 1
+    },
+    {
+      "source": "deletions-guide",
+      "target": "delete-collaboration-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "deletions-guide",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "discord-guideline",
+      "target": "collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "discord-guideline",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "discord-guideline",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "enforcement-regulations-for-official-events",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "about-the-scp-foundation",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "arukikata-kai",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "deletions-guide",
+      "count": 2
+    },
+    {
+      "source": "faq-jp",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "faq-jp",
+      "target": "guide-for-newbies",
+      "count": 5
+    },
+    {
+      "source": "faq-jp",
+      "target": "guide-hub",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "object-classes",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "frequently-asked-questions",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "frequently-asked-questions",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "about-the-scp-foundation",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "collaboration-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "custom-theme-policy",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "guide-hub",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "how-to-propose",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "licensing-guide",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "object-classes",
+      "count": 3
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "other-link-hub",
+      "count": 8
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "site-charter",
+      "count": 2
+    },
+    {
+      "source": "glossary-for-new-site-members-jp",
+      "target": "tag-guide",
+      "count": 2
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "criticism-policy",
+      "count": 3
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "faq-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "how-to-write:how-to-write",
+      "count": 2
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "sandbox3guide",
+      "count": 2
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "system:join",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "guide-for-newbies",
+      "target": "vote-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "about-the-scp-foundation",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "about-the-scp-foundation-for-young",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "adult-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "author-page-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "category-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "custom-theme-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "delete-collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "enforcement-regulations-for-official-events",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "faq-jp",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-others",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-scp",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-tale",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "guide-hub",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "rate-module-design-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "site-charter",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "storage-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "system:join",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "translation-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "user-component-policy",
+      "count": 1
+    },
+    {
+      "source": "guide-hub",
+      "target": "vote-policy",
+      "count": 1
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "criticism-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "glossary-for-new-site-members-jp",
+      "count": 1
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "guide-hub",
+      "count": 2
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "how-to-wikidot",
+      "count": 2
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "other-link-hub",
+      "count": 2
+    },
+    {
+      "source": "how-to-get-better-advice-in-forums-jp",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "how-to-wikidot",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-wikidot",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "how-to-wikidot",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "how-to-wikidot",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-artwork",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-goi-format",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-others",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-scp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-tale",
+      "count": 3
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "how-to-write:post-translation",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:how-to-write",
+      "target": "sandbox3guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "contact-staff",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "criticism-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "deletions-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:post-others",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:post-scp",
+      "count": 5
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:post-tale",
+      "count": 5
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "image-use-policy",
+      "count": 4
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "licensing-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "storage-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "tag-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-artwork",
+      "target": "tag-list",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:post-others",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:post-scp",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:post-tale",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "image-use-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "storage-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "tag-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-goi-format",
+      "target": "tag-list",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "adult-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "author-page-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "category-policy",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "collaboration-guide-jp",
+      "count": 5
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "custom-theme-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "delete-collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "guide-hub",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:post-scp",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:post-tale",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "image-use-policy",
+      "count": 3
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "other-link-hub",
+      "count": 6
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "sandbox3guide",
+      "count": 10
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "tag-guide",
+      "count": 13
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "tag-list",
+      "count": 17
+    },
+    {
+      "source": "how-to-write:post-others",
+      "target": "user-component-policy",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "guide-hub",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:post-others",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:post-tale",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "image-use-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "storage-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-scp",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:how-to-write",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:post-others",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:post-scp",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "how-to-write:post-translation",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "image-use-policy",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "storage-guide",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-tale",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "custom-theme-policy",
+      "count": 4
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:how-to-write",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:post-artwork",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:post-goi-format",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:post-others",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:post-scp",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "how-to-write:post-tale",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "image-use-policy",
+      "count": 5
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "tag-list",
+      "count": 2
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "translation-policy",
+      "count": 5
+    },
+    {
+      "source": "how-to-write:post-translation",
+      "target": "user-component-policy",
+      "count": 2
+    },
+    {
+      "source": "image-use-policy",
+      "target": "contact-staff",
+      "count": 2
+    },
+    {
+      "source": "image-use-policy",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "image-use-policy",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "image-use-policy",
+      "target": "storage-guide",
+      "count": 1
+    },
+    {
+      "source": "licensing-guide",
+      "target": "contact-staff",
+      "count": 2
+    },
+    {
+      "source": "licensing-guide",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "licensing-guide",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "meet-the-staff-jp",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "new-site-members-be-critics",
+      "target": "are-you-good-writer",
+      "count": 2
+    },
+    {
+      "source": "new-site-members-be-critics",
+      "target": "criticism-tips",
+      "count": 2
+    },
+    {
+      "source": "new-site-members-be-critics",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
       "source": "object-classes",
       "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "about-the-scp-foundation",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "are-you-good-writer",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "arukikata-kai",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "criticism-tips",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "glossary-for-new-site-members-jp",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "guide-hub",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "how-to-get-better-advice-in-forums-jp",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "how-to-propose",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "how-to-wikidot",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "new-site-members-be-critics",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "object-classes",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "the-style-of-scp-report",
+      "count": 1
+    },
+    {
+      "source": "other-link-hub",
+      "target": "tips-for-translating-to-japanese",
+      "count": 1
+    },
+    {
+      "source": "rate-module-design-guide",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "about-the-scp-foundation",
+      "count": 1
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "are-you-good-writer",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "deletions-guide",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "image-use-policy",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "licensing-guide",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "object-classes",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "site-rules",
+      "count": 2
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "sakagami-newmembers-guide",
+      "target": "the-style-of-scp-report",
+      "count": 1
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "discord-guideline",
+      "count": 2
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "guide-for-newbies",
+      "count": 2
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "how-to-wikidot",
+      "count": 6
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "how-to-write:how-to-write",
+      "count": 3
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "sandbox3guide",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "site-charter",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "site-charter",
+      "target": "guide-for-newbies",
+      "count": 1
+    },
+    {
+      "source": "site-charter",
+      "target": "site-rules",
+      "count": 2
+    },
+    {
+      "source": "site-rules",
+      "target": "author-page-guide",
+      "count": 2
+    },
+    {
+      "source": "site-rules",
+      "target": "collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "enforcement-regulations-for-official-events",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "guide-hub",
+      "count": 2
+    },
+    {
+      "source": "site-rules",
+      "target": "image-use-policy",
+      "count": 3
+    },
+    {
+      "source": "site-rules",
+      "target": "licensing-guide",
+      "count": 3
+    },
+    {
+      "source": "site-rules",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "site-charter",
+      "count": 2
+    },
+    {
+      "source": "site-rules",
+      "target": "tag-guide",
+      "count": 2
+    },
+    {
+      "source": "site-rules",
+      "target": "tag-list",
+      "count": 1
+    },
+    {
+      "source": "site-rules",
+      "target": "vote-policy",
+      "count": 2
+    },
+    {
+      "source": "storage-guide",
+      "target": "contact-staff",
+      "count": 2
+    },
+    {
+      "source": "storage-guide",
+      "target": "meet-the-staff-jp",
+      "count": 4
+    },
+    {
+      "source": "storage-guide",
+      "target": "site-rules",
+      "count": 2
+    },
+    {
+      "source": "system:join",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "system:join",
+      "target": "guide-for-newbies",
+      "count": 4
+    },
+    {
+      "source": "system:join",
+      "target": "guide-hub",
+      "count": 8
+    },
+    {
+      "source": "tag-guide",
+      "target": "collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "tag-guide",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "tag-guide",
+      "target": "how-to-write:post-goi-format",
+      "count": 2
+    },
+    {
+      "source": "tag-guide",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "tag-guide",
+      "target": "object-classes",
+      "count": 1
+    },
+    {
+      "source": "tag-guide",
+      "target": "tag-list",
+      "count": 7
+    },
+    {
+      "source": "tag-list",
+      "target": "adult-guide",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "author-page-guide",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "co-authored-and-revised-guide-jp",
+      "count": 4
+    },
+    {
+      "source": "tag-list",
+      "target": "collaboration-guide-jp",
+      "count": 2
+    },
+    {
+      "source": "tag-list",
+      "target": "custom-theme-policy",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "delete-collaboration-guide-jp",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-artwork",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-goi-format",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-others",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-scp",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-tale",
+      "count": 3
+    },
+    {
+      "source": "tag-list",
+      "target": "how-to-write:post-translation",
+      "count": 2
+    },
+    {
+      "source": "tag-list",
+      "target": "image-use-policy",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "object-classes",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "sandbox3guide",
+      "count": 1
+    },
+    {
+      "source": "tag-list",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "the-style-of-scp-report",
+      "target": "guide-hub",
+      "count": 2
+    },
+    {
+      "source": "the-style-of-scp-report",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "translation-policy",
+      "target": "criticism-policy",
+      "count": 1
+    },
+    {
+      "source": "translation-policy",
+      "target": "how-to-write:post-translation",
+      "count": 3
+    },
+    {
+      "source": "translation-policy",
+      "target": "meet-the-staff-jp",
+      "count": 2
+    },
+    {
+      "source": "translation-policy",
+      "target": "tag-guide",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "custom-theme-policy",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "deletions-guide",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "licensing-guide",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "meet-the-staff-jp",
+      "count": 3
+    },
+    {
+      "source": "user-component-policy",
+      "target": "site-rules",
+      "count": 1
+    },
+    {
+      "source": "user-component-policy",
+      "target": "tag-list",
+      "count": 2
+    },
+    {
+      "source": "vote-policy",
+      "target": "meet-the-staff-jp",
       "count": 1
     }
   ]

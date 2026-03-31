@@ -79,26 +79,33 @@ python -m http.server 8000
 
 新しいガイドページを追加したり、既存ページのデータを更新する場合の手順です。
 
+1. 新しいページの追加
+
 ```sh
-# 1. file-list.csv に新しいエントリを追加（末尾の # currentDate 行より前に追加する）
-#    フォーマット: url,title,author,createdAt
+# 1. file-list.csv の末尾にページ情報を追記
 #    例:
 #    new-page,新しいガイド,SCP財団,2025/01/01
 
 # 2. data.json を更新
-#    方法A: 特定のファイルのみ指定（data.json が存在する場合は差分更新）
-uv run extract_links.py new-page.ftml another-page.ftml
-#    → ftml/ が存在しない場合は自動作成し、指定ファイルをそこへ移動する
-#    → data.json が存在する場合は指定ファイルのノード・リンクのみ更新する
-
-#    方法B: 全ファイルを処理して再生成
-uv run extract_links.py
-
-# 3. コミット・プッシュ
-git add data.json ftml/<新ファイル名>.ftml file-list.csv
-git commit -m "feat: add <ページ名>"
-git push
+uv run extract_links.py new-page.ftml
 ```
+
+2. 既存のページの更新
+```
+# 1. ftml/ に移動し該当ファイルを編集
+
+# 2. data.json を更新
+uv run extract_links.py
+```
+
+3. ページの削除
+```sh
+# 1. file-list.csvから該当ファイルの情報を削除
+
+# 2. data.json を更新
+uv run extract_links.py
+```
+
 
 ## GitHub Pages デプロイ手順
 

@@ -253,8 +253,8 @@ def main() -> None:
     else:
         print(f"警告: {FTML_DIR} が見つかりません。リンクなしで続行します。")
 
-    # data.json が存在し引数指定ありの場合はインクリメンタル更新
-    incremental = bool(arg_paths) and os.path.exists(OUTPUT)
+    # data.json が存在する場合は常に既存のデータを考慮する（引数なしの全体実行時も含む）
+    incremental = os.path.exists(OUTPUT)
 
     if incremental:
         with open(OUTPUT, encoding="utf-8") as f:
@@ -265,20 +265,22 @@ def main() -> None:
         # 既存ノードを維持 (file-listから削除されたものを除外するために known_urls を確認)
         nodes_by_id = {n["id"]: n for n in existing.get("nodes", []) if n["id"] in known_urls}
         
-        # 新規ファイルからリンクをスキャン
+        # 新規・更新ファイルからリンクをスキャン
         new_link_counts, new_extracted = scan_links(ftml_entries, known_urls)
 
         for n in all_nodes:
             slug = n["id"]
             if slug in target_slugs:
-                # 引数で更新されたノード
+                # 引数で更新された、またはftmlが存在するノード
                 n["extracted_links"] = new_extracted.get(slug, {})
-                nodes_by_id[slug] = n
             elif slug in nodes_by_id:
-                # 更新対象外ノード（基本情報は更新しつつ、以前のリンク抽出結果は維持）
-                existing_extracted = nodes_by_id[slug].get("extracted_links", {})
-                n["extracted_links"] = existing_extracted
-                nodes_by_id[slug] = n
+                # ftmlが存在しないが、既存データがあるノード（情報を維持）
+                n["extracted_links"] = nodes_by_id[slug].get("extracted_links", {})
+            else:
+                # ftmlが存在せず、既存データもない新規ノード
+                n["extracted_links"] = {}
+                
+            nodes_by_id[slug] = n
 
         nodes = list(nodes_by_id.values())
 
