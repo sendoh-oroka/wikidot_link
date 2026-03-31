@@ -10,336 +10,62 @@
           crossorigin="anonymous"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: #1a1a2e;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', sans-serif;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* コントロールバー */
-    #controls {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 8px 16px;
-      background: #16213e;
-      border-bottom: 1px solid #0f3460;
-      flex-shrink: 0;
-      flex-wrap: wrap;
-    }
-
-    #controls label {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: #a0b4cc;
-      white-space: nowrap;
-    }
-
-    #controls input[type="number"],
-    #controls input[type="text"] {
-      background: #0f3460;
-      border: 1px solid #1e5080;
-      border-radius: 4px;
-      color: #e0e0e0;
-      padding: 4px 8px;
-      font-size: 13px;
-      outline: none;
-    }
-
-    #controls input[type="number"]:focus,
-    #controls input[type="text"]:focus {
-      border-color: #4a9eff;
-    }
-
+    body { background: #1a1a2e; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+    #controls { display: flex; align-items: center; gap: 16px; padding: 8px 16px; background: #16213e; border-bottom: 1px solid #0f3460; flex-shrink: 0; flex-wrap: wrap; }
+    #controls label { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #a0b4cc; white-space: nowrap; }
+    #controls input[type="number"], #controls input[type="text"] { background: #0f3460; border: 1px solid #1e5080; border-radius: 4px; color: #e0e0e0; padding: 4px 8px; font-size: 13px; outline: none; }
+    #controls input:focus { border-color: #4a9eff; }
     #controls .search-field { width: 180px; }
-
-    .control-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .control-group-label {
-      font-size: 11px;
-      color: #506880;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .separator {
-      width: 1px;
-      height: 24px;
-      background: #1e4060;
-    }
-
-    .toggle-btn {
-      background: #0f3460;
-      border: 1px solid #1e5080;
-      border-radius: 4px;
-      color: #a0b4cc;
-      padding: 4px 10px;
-      font-size: 13px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-    }
-
-    .toggle-btn:hover {
-      background: #1e5080;
-      color: #e0e0e0;
-    }
-
-    .toggle-btn.active {
-      background: #1a4030;
-      border-color: #4caf50;
-      color: #4caf50;
-    }
-
-    /* メインレイアウト */
-    #main {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
-
-    /* SVGエリア */
-    #graph-container {
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #graph-container svg {
-      width: 100%;
-      height: 100%;
-      cursor: grab;
-    }
-
-    #graph-container svg:active {
-      cursor: grabbing;
-    }
-
-    /* 凡例（左下） */
-    #legend {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(22, 33, 62, 0.92);
-      border: 1px solid #0f3460;
-      border-radius: 6px;
-      padding: 10px 14px;
-      font-size: 12px;
-      color: #a0b4cc;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    #legend .legend-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #7090a0;
-      margin-bottom: 7px;
-    }
-
-    #legend .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 5px;
-      line-height: 1;
-    }
-
-    #legend .legend-item:last-child {
-      margin-bottom: 0;
-    }
-
-    #legend .legend-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    #legend .legend-line {
-      width: 20px;
-      height: 3px;
-      flex-shrink: 0;
-      border-radius: 1px;
-    }
-
-    #legend .legend-note {
-      margin-top: 7px;
-      border-top: 1px solid #0f3460;
-      padding-top: 7px;
-      color: #7090a0;
-      font-size: 10px;
-      line-height: 1.5;
-    }
-
-    /* 右パネル */
-    #panel {
-      width: 280px;
-      flex-shrink: 0;
-      background: #16213e;
-      border-left: 1px solid #0f3460;
-      overflow-y: auto;
-      padding: 12px;
-    }
-
+    .control-group { display: flex; align-items: center; gap: 8px; }
+    .separator { width: 1px; height: 24px; background: #1e4060; }
+    .toggle-btn { background: #0f3460; border: 1px solid #1e5080; border-radius: 4px; color: #a0b4cc; padding: 4px 10px; font-size: 13px; cursor: pointer; white-space: nowrap; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .toggle-btn:hover { background: #1e5080; color: #e0e0e0; }
+    .toggle-btn.active { background: #1a4030; border-color: #4caf50; color: #4caf50; }
+    #main { display: flex; flex: 1; overflow: hidden; }
+    #graph-container { flex: 1; position: relative; overflow: hidden; }
+    #graph-container svg { width: 100%; height: 100%; cursor: grab; }
+    #graph-container svg:active { cursor: grabbing; }
+    #legend { position: absolute; bottom: 16px; left: 16px; background: rgba(22, 33, 62, 0.92); border: 1px solid #0f3460; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #a0b4cc; pointer-events: none; z-index: 10; }
+    #legend .legend-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #7090a0; margin-bottom: 7px; }
+    #legend .legend-item { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; line-height: 1; }
+    #legend .legend-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    #legend .legend-line { width: 20px; height: 3px; flex-shrink: 0; border-radius: 1px; }
+    #legend .legend-note { margin-top: 7px; border-top: 1px solid #0f3460; padding-top: 7px; color: #7090a0; font-size: 10px; line-height: 1.5; }
+    #panel { width: 280px; flex-shrink: 0; background: #16213e; border-left: 1px solid #0f3460; overflow-y: auto; padding: 12px; }
     #panel::-webkit-scrollbar { width: 6px; }
     #panel::-webkit-scrollbar-track { background: #0f3460; }
     #panel::-webkit-scrollbar-thumb { background: #1e5080; border-radius: 3px; }
-
-    #panel-content {
-      font-size: 13px;
-      color: #c0c8d0;
-    }
-
-    #panel-placeholder {
-      color: #4a6080;
-      font-size: 13px;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .panel-title {
-      font-size: 15px;
-      font-weight: bold;
-      color: #e0e8f0;
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .panel-row {
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-
-    .panel-label {
-      color: #7090a0;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
-    }
-
-    .panel-row a {
-      color: #4a9eff;
-      text-decoration: none;
-    }
-
-    .panel-row a:hover {
-      text-decoration: underline;
-    }
-
-    .panel-section-header {
-      font-size: 12px;
-      font-weight: bold;
-      color: #a0b4cc;
-      margin: 14px 0 6px;
-      border-bottom: 1px solid #0f3460;
-      padding-bottom: 4px;
-    }
-
-    .panel-link-item {
-      padding: 3px 0;
-      cursor: pointer;
-      color: #8ab4cc;
-      font-size: 12px;
-      display: block;
-      line-height: 1.4;
-    }
-
-    .panel-link-item:hover {
-      color: #4a9eff;
-    }
-
-    .multi-node-block {
-      border: 1px solid #0f3460;
-      border-radius: 4px;
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-
-    .multi-count {
-      font-size: 12px;
-      color: #7090a0;
-      margin-bottom: 8px;
-    }
-
-    /* コピーボタン */
-    .copy-btn {
-      display: block;
-      width: 100%;
-      margin-top: 14px;
-      padding: 7px 12px;
-      background: #0f3460;
-      border: 1px solid #1e5080;
-      border-radius: 4px;
-      color: #a0b4cc;
-      font-size: 12px;
-      cursor: pointer;
-      text-align: center;
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .copy-btn:hover {
-      background: #1e5080;
-      color: #e0e0e0;
-    }
-
-    .copy-btn.copied {
-      background: #1a4030;
-      border-color: #4caf50;
-      color: #4caf50;
-    }
-
-    /* グラフノード・エッジ */
-    .node circle {
-      stroke-width: 1.5px;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .node text {
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .link {
-      transition: opacity 0.2s;
-    }
+    #panel-content { font-size: 13px; color: #c0c8d0; }
+    #panel-placeholder { color: #4a6080; font-size: 13px; text-align: center; margin-top: 40px; }
+    .panel-title { font-size: 15px; font-weight: bold; color: #e0e8f0; margin-bottom: 10px; line-height: 1.4; }
+    .panel-row { margin-bottom: 8px; line-height: 1.5; }
+    .panel-label { color: #7090a0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .panel-row a { color: #4a9eff; text-decoration: none; }
+    .panel-row a:hover { text-decoration: underline; }
+    .panel-section-header { font-size: 12px; font-weight: bold; color: #a0b4cc; margin: 14px 0 6px; border-bottom: 1px solid #0f3460; padding-bottom: 4px; }
+    .panel-link-item { padding: 3px 0; cursor: pointer; color: #8ab4cc; font-size: 12px; display: block; line-height: 1.4; }
+    .panel-link-item:hover { color: #4a9eff; }
+    .multi-node-block { border: 1px solid #0f3460; border-radius: 4px; padding: 8px; margin-bottom: 10px; }
+    .multi-count { font-size: 12px; color: #7090a0; margin-bottom: 8px; }
+    .copy-btn { display: block; width: 100%; margin-top: 14px; padding: 7px 12px; background: #0f3460; border: 1px solid #1e5080; border-radius: 4px; color: #a0b4cc; font-size: 12px; cursor: pointer; text-align: center; transition: background 0.15s, color 0.15s; }
+    .copy-btn:hover { background: #1e5080; color: #e0e0e0; }
+    .copy-btn.copied { background: #1a4030; border-color: #4caf50; color: #4caf50; }
+    .node circle { stroke-width: 1.5px; cursor: pointer; transition: opacity 0.2s; }
+    .node text { pointer-events: none; user-select: none; }
+    .link { transition: opacity 0.2s; }
   </style>
 </head>
 <body>
 
 <div id="controls">
   <div class="control-group">
-    <label>
-      <input type="text" id="searchTitle" class="search-field" placeholder="タイトル・URLで検索...">
-    </label>
-    <label>
-      <input type="text" id="searchAuthor" class="search-field" placeholder="著者で検索...">
-    </label>
+    <label><input type="text" id="searchTitle" class="search-field" placeholder="タイトル・URLで検索..."></label>
+    <label><input type="text" id="searchAuthor" class="search-field" placeholder="著者で検索..."></label>
   </div>
   <div class="separator"></div>
   <div class="control-group">
-    <label>
-      <span>X年以前を強調:</span>
-      <input type="number" id="yearFilter" placeholder="例: 2021" min="2013" max="2030" style="width:80px">
-    </label>
-    <label>
-      <span>密度:</span>
-      <input type="range" id="densitySlider" min="50" max="500" value="200" style="width:100px">
-    </label>
+    <label><span>X年以前を強調:</span><input type="number" id="yearFilter" placeholder="例: 2021" min="2013" max="2030" style="width:80px"></label>
+    <label><span>密度:</span><input type="range" id="densitySlider" min="50" max="500" value="200" style="width:100px"></label>
     <button class="toggle-btn" id="mutualOnly">相互リンクのみ表示</button>
     <button class="toggle-btn" id="excludeFoundation">SCP財団以外を表示</button>
   </div>
@@ -350,29 +76,13 @@
     <svg id="svg"></svg>
     <div id="legend">
       <div class="legend-title">凡例</div>
-      <div class="legend-item">
-        <span class="legend-dot" style="background:#808080"></span>選択中
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot" style="background:#e05030"></span>相互リンク
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot" style="background:#4caf50"></span>リンク先
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot" style="background:#ff9800"></span>リンク元
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot" style="background:#4a9eff"></span>通常
-      </div>
-      <div class="legend-item" style="margin-top:6px">
-        <span class="legend-line" style="background:#e05030"></span>相互リンク
-      </div>
-      <div class="legend-note">
-        Shift+クリックで複数選択<br>
-        ノード中心の数字:<br>
-        −N 被リンク数　＋N リンク数
-      </div>
+      <div class="legend-item"><span class="legend-dot" style="background:#808080"></span>選択中</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#e05030"></span>相互リンク</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#4caf50"></span>リンク先</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#ff9800"></span>リンク元</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#4a9eff"></span>通常</div>
+      <div class="legend-item" style="margin-top:6px"><span class="legend-line" style="background:#e05030"></span>相互リンク</div>
+      <div class="legend-note">Shift+クリックで複数選択<br>ノード中心の数字:<br>−N 被リンク数　＋N リンク数</div>
     </div>
   </div>
   <div id="panel">
@@ -382,778 +92,338 @@
 </div>
 
 <script>
+// ---- ユーティリティ関数 ----
+const linkSrc = (l) => typeof l.source === 'object' ? l.source.id : l.source;
+const linkTgt = (l) => typeof l.target === 'object' ? l.target.id : l.target;
+const getPairKey = (a, b) => a < b ? `${a}|${b}` : `${b}|${a}`;
+const escHtml = (str) => String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+const isSafeUrl = (url) => /^https?:\/\//i.test(url);
+const toLower = (str) => (str || '').toLowerCase();
+
+// ---- 状態管理オブジェクト ----
+const state = {
+  selectedIds: new Set(),
+  yearFilterVal: null,
+  mutualOnly: false,
+  excludeFoundation: false,
+  searchTitle: '',
+  searchAuthor: ''
+};
+
+// カラーパレット
+const COLORS = {
+  selected: '#808080', mutual: '#e05030', target: '#4caf50', source: '#ff9800', 
+  normal: '#4a9eff', bgStroke: '#1a3060', highlightText: '#ffd700', dim: '#555', dimText: '#8aa8cc'
+};
+
 fetch('./data.json').then(r => r.json()).then(data => {
-  // ---- データ準備 ----
+  // D3が元データを書き換えるのを防ぐためディープコピー
   const allNodes = data.nodes.map(d => ({ ...d }));
   const allLinks = data.links.map(d => ({ ...d }));
+  const allNodeMap = Object.fromEntries(allNodes.map(n => [n.id, n]));
 
-  const allNodeMap = {};
-  allNodes.forEach(n => { allNodeMap[n.id] = n; });
-
-  // 相互リンクペアを事前計算 (Set of "id1|id2" where id1 < id2)
+  // 相互リンクと次数の事前計算
   const mutualPairs = new Set();
+  const mutualNodeIds = new Set();
+  const inDegreeMap = Object.fromEntries(allNodes.map(n => [n.id, 0]));
+
   allLinks.forEach(l => {
-    const sid = linkSrc(l);
-    const tid = linkTgt(l);
-    const reverse = allLinks.some(ll => {
-      return linkSrc(ll) === tid && linkTgt(ll) === sid;
-    });
-    if (reverse) {
-      const key = sid < tid ? `${sid}|${tid}` : `${tid}|${sid}`;
-      mutualPairs.add(key);
+    const s = linkSrc(l), t = linkTgt(l);
+    inDegreeMap[t]++;
+    if (allLinks.some(ll => linkSrc(ll) === t && linkTgt(ll) === s)) {
+      mutualPairs.add(getPairKey(s, t));
+      mutualNodeIds.add(s).add(t);
     }
   });
 
-  // 相互リンクに関与するノードIDのSet
-  const mutualNodeIds = new Set();
-  mutualPairs.forEach(key => {
-    const [a, b] = key.split('|');
-    mutualNodeIds.add(a);
-    mutualNodeIds.add(b);
-  });
-
-  function isMutual(a, b) {
-    const key = a < b ? `${a}|${b}` : `${b}|${a}`;
-    return mutualPairs.has(key);
-  }
-
-  function linkSrc(l) { return typeof l.source === 'object' ? l.source.id : l.source; }
-  function linkTgt(l) { return typeof l.target === 'object' ? l.target.id : l.target; }
-
-  // in-degreeの計算
-  const inDegreeMap = {};
-  allNodes.forEach(n => { inDegreeMap[n.id] = 0; });
-  allLinks.forEach(l => {
-    const tid = linkTgt(l);
-    if (inDegreeMap[tid] !== undefined) inDegreeMap[tid]++;
-  });
-
-  const maxInDegree = Math.max(1, ...Object.values(inDegreeMap));
-  const nodeRadius = d3.scaleSqrt().domain([0, maxInDegree]).range([5, 22]);
+  const isMutual = (a, b) => mutualPairs.has(getPairKey(a, b));
+  const nodeRadius = d3.scaleSqrt().domain([0, Math.max(1, ...Object.values(inDegreeMap))]).range([5, 22]);
 
   // ---- SVGセットアップ ----
   const container = document.getElementById('graph-container');
   const svg = d3.select('#svg');
-
-  let width = container.clientWidth;
-  let height = container.clientHeight;
-
-  // defs: arrowhead markers
   const defs = svg.append('defs');
 
-  function makeMarker(id, color) {
+  const createMarker = (id, color, reverse = false) => {
     defs.append('marker')
-      .attr('id', id)
-      .attr('viewBox', '0 -4 8 8')
-      .attr('refX', 8)
-      .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
+      .attr('id', id).attr('viewBox', '0 -4 8 8')
+      .attr('refX', reverse ? 0 : 8).attr('refY', 0)
+      .attr('markerWidth', 6).attr('markerHeight', 6)
       .attr('orient', 'auto')
-      .append('path')
-        .attr('d', 'M0,-4L8,0L0,4')
-        .attr('fill', color);
-  }
+      .append('path').attr('d', reverse ? 'M8,-4L0,0L8,4' : 'M0,-4L8,0L0,4').attr('fill', color);
+  };
 
-  // 逆向き矢印マーカー（相互リンク用）
-  function makeMarkerReverse(id, color) {
-    defs.append('marker')
-      .attr('id', id)
-      .attr('viewBox', '0 -4 8 8')
-      .attr('refX', 0)
-      .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('orient', 'auto')
-      .append('path')
-        .attr('d', 'M8,-4L0,0L8,4')
-        .attr('fill', color);
-  }
-
-  makeMarker('arrow-default', '#555');
-  makeMarkerReverse('arrow-default-rev', '#555');
-  makeMarker('arrow-source', '#ff9800');
-  makeMarker('arrow-target', '#4caf50');
-  makeMarker('arrow-mutual', '#e05030');
-  makeMarkerReverse('arrow-mutual-rev', '#e05030');
+  createMarker('arrow-default', COLORS.dim);
+  createMarker('arrow-default-rev', COLORS.dim, true);
+  createMarker('arrow-source', COLORS.source);
+  createMarker('arrow-target', COLORS.target);
+  createMarker('arrow-mutual', COLORS.mutual);
+  createMarker('arrow-mutual-rev', COLORS.mutual, true);
 
   const gRoot = svg.append('g').attr('class', 'root');
-
-  // ズーム・パン
-  const zoom = d3.zoom()
-    .scaleExtent([0.1, 8])
-    .on('zoom', e => gRoot.attr('transform', e.transform));
-  svg.call(zoom);
-
-  // 背景クリックで選択解除
-  svg.on('click', function(e) {
-    if (e.target === this || e.target.tagName === 'svg') {
-      selectedIds.clear();
+  const zoom = d3.zoom().scaleExtent([0.1, 8]).on('zoom', e => gRoot.attr('transform', e.transform));
+  svg.call(zoom).on('click', e => {
+    if (e.target.tagName === 'svg') {
+      state.selectedIds.clear();
       applyAllFilters();
-      updatePanel([], []);
+      updatePanel();
     }
   });
 
   const gLinks = gRoot.append('g').attr('class', 'links');
   const gNodes = gRoot.append('g').attr('class', 'nodes');
+  
+  let simulation, nodeSelection, linkSelection;
 
-  // ---- 状態管理 ----
-  let selectedIds = new Set();
-  let yearFilterVal = null;
-  let mutualOnly = false;
-  let searchTitleQuery = '';
-  let searchAuthorQuery = '';
-  let excludeFoundation = false;
-
-  // ---- シミュレーション ----
-  let simulation;
-  let nodeSelection, linkSelection;
-
+  // ---- グラフ構築 ----
   function buildGraph() {
-    gLinks.selectAll('*').remove();
-    gNodes.selectAll('*').remove();
-
-    // 常に全リンクを表示（mutualOnlyはdim方式で制御）
-    let visibleLinks = allLinks;
-
-    // 相互リンクは片方向のみ残す（id が小さい方→大きい方）
-    const seenMutualPairs = new Set();
-    const deduped = [];
-    visibleLinks.forEach(l => {
-      const sid = linkSrc(l);
-      const tid = linkTgt(l);
-      if (isMutual(sid, tid)) {
-        const key = sid < tid ? `${sid}|${tid}` : `${tid}|${sid}`;
-        if (!seenMutualPairs.has(key)) {
-          seenMutualPairs.add(key);
-          // 正規化: source=小さいID, target=大きいID
-          if (sid < tid) {
-            deduped.push({ source: sid, target: tid, count: l.count, mutual: true });
-          } else {
-            deduped.push({ source: tid, target: sid, count: l.count, mutual: true });
-          }
-        }
-      } else {
-        deduped.push({ source: sid, target: tid, count: l.count, mutual: false });
+    const seenMutual = new Set();
+    const dedupedLinks = allLinks.map(l => {
+      const s = linkSrc(l), t = linkTgt(l), isMut = isMutual(s, t);
+      if (isMut) {
+        const key = getPairKey(s, t);
+        if (seenMutual.has(key)) return null;
+        seenMutual.add(key);
+        // 【修正点】 Math.min/max は文字列だとNaNになるため、比較演算子を使用
+        return { source: s < t ? s : t, target: s < t ? t : s, count: l.count, mutual: true };
       }
-    });
+      return { source: s, target: t, count: l.count, mutual: false };
+    }).filter(Boolean);
 
-    // deep copy（シミュレーションがsource/targetを書き換えるため）
-    const nodes = allNodes.map(d => ({ ...d }));
-    const links = deduped.map(d => ({ ...d }));
+    // シミュレーションには常に専用のコピーを渡す
+    const simNodes = allNodes.map(d => ({ ...d }));
 
-    // シミュレーション初期化
     if (simulation) simulation.stop();
-    simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(d => d.mutual ? 40 : 120))
+    simulation = d3.forceSimulation(simNodes)
+      .force('link', d3.forceLink(dedupedLinks).id(d => d.id).distance(d => d.mutual ? 40 : 120))
       .force('charge', d3.forceManyBody().strength(-parseInt(document.getElementById('densitySlider').value)))
-      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('center', d3.forceCenter(container.clientWidth / 2, container.clientHeight / 2))
       .force('collision', d3.forceCollide().radius(d => nodeRadius(inDegreeMap[d.id] || 0) + 5));
 
-    // エッジ描画
-    linkSelection = gLinks.selectAll('line')
-      .data(links)
-      .join('line')
-        .attr('class', 'link')
-        .attr('stroke', '#555')
-        .attr('stroke-opacity', 0.8)
-        .attr('stroke-width', 1.5)
-        .attr('marker-end', 'url(#arrow-default)')
-        .attr('marker-start', d => d.mutual ? 'url(#arrow-default-rev)' : '');
+    linkSelection = gLinks.selectAll('line').data(dedupedLinks).join('line')
+      .attr('class', 'link').attr('stroke-width', 1.5)
+      .attr('marker-end', 'url(#arrow-default)')
+      .attr('marker-start', d => d.mutual ? 'url(#arrow-default-rev)' : '');
 
-    // ノード描画
-    const nodeGroup = gNodes.selectAll('g.node')
-      .data(nodes, d => d.id)
-      .join('g')
-        .attr('class', 'node')
-        .call(d3.drag()
-          .on('start', dragstarted)
-          .on('drag', dragged)
-          .on('end', dragended))
-        .on('click', function(e, d) {
-          e.stopPropagation();
-          if (e.shiftKey) {
-            if (selectedIds.has(d.id)) {
-              selectedIds.delete(d.id);
-            } else {
-              selectedIds.add(d.id);
-            }
-          } else {
-            selectedIds = new Set([d.id]);
-          }
-          applyAllFilters();
-          updatePanel(nodes, links);
-        });
+    nodeSelection = gNodes.selectAll('g.node').data(simNodes, d => d.id).join('g')
+      .attr('class', 'node')
+      .call(d3.drag()
+        .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+        .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+        .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }))
+      .on('click', (e, d) => {
+        e.stopPropagation();
+        if (e.shiftKey) state.selectedIds.has(d.id) ? state.selectedIds.delete(d.id) : state.selectedIds.add(d.id);
+        else state.selectedIds = new Set([d.id]);
+        applyAllFilters();
+        updatePanel();
+      });
 
-    nodeGroup.append('circle')
-      .attr('r', d => nodeRadius(inDegreeMap[d.id] || 0))
-      .attr('fill', '#4a9eff')
-      .attr('stroke', '#1a3060');
-
-    // ノード中心のリンク数テキスト（選択時に表示）
-    nodeGroup.append('text')
-      .attr('class', 'center-count')
-      .attr('text-anchor', 'middle')
-      .attr('dominant-baseline', 'central')
-      .attr('x', 0)
-      .attr('y', 0)
-      .attr('font-size', '8px')
-      .attr('fill', 'white')
-      .attr('font-weight', 'bold')
-      .text('');
-
-    // ノード名ラベル（タイトルを使用）
-    nodeGroup.append('text')
-      .attr('class', 'node-label')
-      .text(d => d.title)
-      .attr('x', d => nodeRadius(inDegreeMap[d.id] || 0) + 3)
-      .attr('y', 3)
-      .attr('font-size', '9px')
-      .attr('fill', '#8aa8cc');
-
-    nodeSelection = nodeGroup;
+    nodeSelection.selectAll('*').remove(); // 再描画時の重複を防ぐ
+    nodeSelection.append('circle').attr('r', d => nodeRadius(inDegreeMap[d.id] || 0));
+    nodeSelection.append('text').attr('class', 'center-count').attr('text-anchor', 'middle').attr('dominant-baseline', 'central').attr('font-size', '8px').attr('fill', 'white').attr('font-weight', 'bold');
+    nodeSelection.append('text').attr('class', 'node-label').text(d => d.title).attr('x', d => nodeRadius(inDegreeMap[d.id] || 0) + 3).attr('y', 3).attr('font-size', '9px');
 
     simulation.on('tick', () => {
       linkSelection.each(function(d) {
-        const line = d3.select(this);
         const sr = nodeRadius(inDegreeMap[d.source.id] || 0) + 6;
         const tr = nodeRadius(inDegreeMap[d.target.id] || 0) + 6;
-        const dx = d.target.x - d.source.x;
-        const dy = d.target.y - d.source.y;
+        const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const ux = dx / dist;
-        const uy = dy / dist;
-
-        if (d.mutual) {
-          // 相互リンク: 両端をノード半径分だけ内側にオフセット
-          line
-            .attr('x1', d.source.x + ux * sr)
-            .attr('y1', d.source.y + uy * sr)
-            .attr('x2', d.target.x - ux * tr)
-            .attr('y2', d.target.y - uy * tr);
-        } else {
-          line
-            .attr('x1', d.source.x)
-            .attr('y1', d.source.y)
-            .attr('x2', d.target.x - ux * tr)
-            .attr('y2', d.target.y - uy * tr);
-        }
+        const ux = dx / dist, uy = dy / dist;
+        d3.select(this)
+          .attr('x1', d.source.x + (d.mutual ? ux * sr : 0))
+          .attr('y1', d.source.y + (d.mutual ? uy * sr : 0))
+          .attr('x2', d.target.x - ux * tr)
+          .attr('y2', d.target.y - uy * tr);
       });
-
       nodeSelection.attr('transform', d => `translate(${d.x},${d.y})`);
     });
 
     applyAllFilters();
   }
 
-  // ---- ドラッグ ----
-  function dragstarted(e, d) {
-    if (!e.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x; d.fy = d.y;
-  }
-  function dragged(e, d) {
-    d.fx = e.x; d.fy = e.y;
-  }
-  function dragended(e, d) {
-    if (!e.active) simulation.alphaTarget(0);
-    d.fx = null; d.fy = null;
-  }
-
- // ---- 統合フィルター ----
+  // ---- フィルタ・ハイライト制御 ----
   function applyAllFilters() {
     if (!nodeSelection) return;
-
-    const hasSelection = selectedIds.size > 0;
-    const hasYear = yearFilterVal !== null;
-    const hasTitleSearch = !!searchTitleQuery;
-    const hasAuthorSearch = !!searchAuthorQuery;
-    const qt = hasTitleSearch ? searchTitleQuery.toLowerCase() : '';
-    const qa = hasAuthorSearch ? searchAuthorQuery.toLowerCase() : '';
-
-    // 選択ノードに繋がるノードを収集（allLinksベースで計算）
-    const linkedTargets = new Set();
-    const linkedSources = new Set();
-    const linkedMutual = new Set();
-    const linkedCounts = {};
-
-    if (hasSelection) {
+    
+    const hasSel = state.selectedIds.size > 0;
+    const { yearFilterVal, searchTitle, searchAuthor, excludeFoundation, mutualOnly } = state;
+    
+    const rel = { targets: new Set(), sources: new Set(), mutuals: new Set(), counts: {} };
+    if (hasSel) {
       allLinks.forEach(l => {
-        const sid = linkSrc(l);
-        const tid = linkTgt(l);
-        if (selectedIds.has(sid) && !selectedIds.has(tid)) {
-          if (isMutual(sid, tid)) {
-            linkedMutual.add(tid);
-          } else {
-            linkedTargets.add(tid);
-          }
-          if (!linkedCounts[tid]) linkedCounts[tid] = { out: 0, in: 0 };
-          linkedCounts[tid].out += l.count;
+        const sid = linkSrc(l), tid = linkTgt(l);
+        const selS = state.selectedIds.has(sid), selT = state.selectedIds.has(tid);
+        if (selS && !selT) {
+          isMutual(sid, tid) ? rel.mutuals.add(tid) : rel.targets.add(tid);
+          rel.counts[tid] = rel.counts[tid] || { in: 0, out: 0 };
+          rel.counts[tid].out += l.count;
         }
-        if (selectedIds.has(tid) && !selectedIds.has(sid)) {
-          if (isMutual(sid, tid)) {
-            linkedMutual.add(sid);
-          } else {
-            linkedSources.add(sid);
-          }
-          if (!linkedCounts[sid]) linkedCounts[sid] = { out: 0, in: 0 };
-          linkedCounts[sid].in += l.count;
+        if (selT && !selS) {
+          isMutual(sid, tid) ? rel.mutuals.add(sid) : rel.sources.add(sid);
+          rel.counts[sid] = rel.counts[sid] || { in: 0, out: 0 };
+          rel.counts[sid].in += l.count;
         }
       });
     }
 
-    // 【追加】各ノードの最終的な表示状態を保存するMap
     const nodeVisible = new Map();
 
     nodeSelection.each(function(d) {
-      const node = d3.select(this);
-
-      const isSelected = selectedIds.has(d.id);
-      const isMutualLinked = linkedMutual.has(d.id);
+      const isSel = state.selectedIds.has(d.id);
+      const isMut = rel.mutuals.has(d.id);
+      const isTgt = !mutualOnly && rel.targets.has(d.id);
+      const isSrc = !mutualOnly && rel.sources.has(d.id);
       
-      // 【変更1】相互リンクのみ表示の際、単方向のリンク先/元をハイライト対象から除外する
-      const isTarget = !mutualOnly && linkedTargets.has(d.id);
-      const isSource = !mutualOnly && linkedSources.has(d.id);
-      const isConnected = isSelected || isMutualLinked || isTarget || isSource;
+      const passStrict = (!yearFilterVal || d.year <= yearFilterVal) && 
+                         (!excludeFoundation || d.author !== 'SCP財団') && 
+                         (!mutualOnly || mutualNodeIds.has(d.id));
+                         
+      const matchSearch = (!searchTitle || toLower(d.id).includes(toLower(searchTitle)) || toLower(d.title).includes(toLower(searchTitle))) &&
+                          (!searchAuthor || toLower((d.author || '').replace(/[{}]/g, '')).includes(toLower(searchAuthor)));
 
-      const passYear = !hasYear || d.year <= yearFilterVal;
-      const passTitleSearch = !hasTitleSearch || matchesTitleSearch(d, qt);
-      const passAuthorSearch = !hasAuthorSearch || matchesAuthorSearch(d, qa);
-      const passFoundation = !excludeFoundation || !isFoundationAuthor(d.author);
-      const passMutual = !mutualOnly || mutualNodeIds.has(d.id);
-      const strictFilters = passYear && passFoundation && passMutual;
-
-      let visible = false;
-
-      if (hasSelection) {
-        visible = isConnected && strictFilters;
-      } else {
-        // 未選択時は各種フィルタの条件をすべて適用
-        visible = strictFilters && passTitleSearch && passAuthorSearch;
-      }
-
-      // 状態を保存（リンクの透過処理で使用）
+      const visible = hasSel ? ((isSel || isMut || isTgt || isSrc) && passStrict) : (passStrict && matchSearch);
       nodeVisible.set(d.id, visible);
 
-      node.select('circle')
-        .attr('fill', isSelected ? '#808080'
-          : isMutualLinked ? '#e05030'
-          : isTarget ? '#4caf50'
-          : isSource ? '#ff9800'
-          : '#4a9eff')
-        .attr('stroke', isSelected ? '#606060' : '#1a3060')
-        .attr('opacity', visible ? 1 : 0.08);
-
-      const c = linkedCounts[d.id];
-      node.select('text.center-count')
-        .text(() => {
-          if (!hasSelection || !c) return '';
-          const parts = [];
-          if (c.in > 0) parts.push(`\u2212${c.in}`);
-          if (c.out > 0) parts.push(`\uff0b${c.out}`);
-          return parts.join(' ');
-        });
-
-      const isSearchHighlighted = (hasTitleSearch && matchesTitleSearch(d, qt)) || (hasAuthorSearch && matchesAuthorSearch(d, qa));
-      node.select('text.node-label')
-        .attr('display', visible ? null : 'none')
-        .attr('fill', isSelected ? 'white' : isSearchHighlighted ? '#ffd700' : '#8aa8cc')
-        .attr('font-weight', isSelected ? 'bold' : 'normal');
+      const fillColor = isSel ? COLORS.selected : isMut ? COLORS.mutual : isTgt ? COLORS.target : isSrc ? COLORS.source : COLORS.normal;
+      
+      const node = d3.select(this);
+      node.select('circle').attr('fill', fillColor).attr('stroke', isSel ? '#606060' : COLORS.bgStroke).attr('opacity', visible ? 1 : 0.08);
+      
+      const c = rel.counts[d.id];
+      node.select('text.center-count').text(hasSel && c ? [c.in > 0 ? `\u2212${c.in}` : '', c.out > 0 ? `\uff0b${c.out}` : ''].filter(Boolean).join(' ') : '');
+      node.select('text.node-label').attr('display', visible ? null : 'none').attr('fill', isSel ? 'white' : (searchTitle || searchAuthor) && matchSearch ? COLORS.highlightText : COLORS.dimText).attr('font-weight', isSel ? 'bold' : 'normal');
     });
 
-    // リンクの色・不透明度
-    if (linkSelection) {
-      linkSelection.each(function(l) {
-        const sid = linkSrc(l);
-        const tid = linkTgt(l);
-        const link = d3.select(this);
+    const getLinkStyle = (l, sid, tid) => {
+      if (!nodeVisible.get(sid) || !nodeVisible.get(tid)) return { c: COLORS.dim, o: 0.05, mE: 'url(#arrow-default)', mS: '' };
+      
+      if (hasSel) {
+        const selS = state.selectedIds.has(sid), selT = state.selectedIds.has(tid);
+        if (mutualOnly && !l.mutual) return { c: COLORS.dim, o: 0.08, mE: 'url(#arrow-default)', mS: '' };
+        if (selS && selT) return l.mutual ? { c: COLORS.mutual, o: 1, mE: 'url(#arrow-mutual)', mS: 'url(#arrow-mutual-rev)' } : { c: COLORS.dim, o: 0.8, mE: 'url(#arrow-default)', mS: '' };
+        if (l.mutual && (selS || selT)) return { c: COLORS.mutual, o: 1, mE: 'url(#arrow-mutual)', mS: 'url(#arrow-mutual-rev)' };
+        if (selS && rel.targets.has(tid)) return { c: COLORS.target, o: 1, mE: 'url(#arrow-target)', mS: '' };
+        if (selT && rel.sources.has(sid)) return { c: COLORS.source, o: 1, mE: 'url(#arrow-source)', mS: '' };
+        return { c: COLORS.dim, o: 0.05, mE: 'url(#arrow-default)', mS: '' };
+      }
+      
+      if (mutualOnly) return l.mutual ? { c: COLORS.dim, o: 0.8, mE: 'url(#arrow-default)', mS: 'url(#arrow-default-rev)' } : { c: COLORS.dim, o: 0.08, mE: 'url(#arrow-default)', mS: '' };
+      return { c: COLORS.dim, o: 0.8, mE: 'url(#arrow-default)', mS: l.mutual ? 'url(#arrow-default-rev)' : '' };
+    };
 
-        // 【変更2】両端のノードのいずれかが「暗く」なっている場合、リンクも暗くする
-        // （これにより年フィルタや検索フィルタで除外されたノードの矢印が暗くなります）
-        if (!nodeVisible.get(sid) || !nodeVisible.get(tid)) {
-          link.attr('stroke', '#555').attr('opacity', 0.05)
-            .attr('marker-end', 'url(#arrow-default)')
-            .attr('marker-start', '');
-          return; // 以降の処理をスキップ
-        }
-
-        if (hasSelection) {
-          const selectedHasSrc = selectedIds.has(sid);
-          const selectedHasTgt = selectedIds.has(tid);
-
-          if (mutualOnly && !l.mutual) {
-            link.attr('stroke', '#555').attr('opacity', 0.08)
-              .attr('marker-end', 'url(#arrow-default)')
-              .attr('marker-start', '');
-          } else if (selectedHasSrc && selectedHasTgt) {
-            if (l.mutual) {
-              link.attr('stroke', '#e05030').attr('opacity', 1)
-                .attr('marker-end', 'url(#arrow-mutual)')
-                .attr('marker-start', 'url(#arrow-mutual-rev)');
-            } else {
-              link.attr('stroke', '#555').attr('opacity', 0.8)
-                .attr('marker-end', 'url(#arrow-default)')
-                .attr('marker-start', '');
-            }
-          } else if (l.mutual && (selectedHasSrc || selectedHasTgt)) {
-            link.attr('stroke', '#e05030').attr('opacity', 1)
-              .attr('marker-end', 'url(#arrow-mutual)')
-              .attr('marker-start', 'url(#arrow-mutual-rev)');
-          } else if (selectedHasSrc && linkedTargets.has(tid)) {
-            link.attr('stroke', '#4caf50').attr('opacity', 1)
-              .attr('marker-end', 'url(#arrow-target)')
-              .attr('marker-start', '');
-          } else if (selectedHasTgt && linkedSources.has(sid)) {
-            link.attr('stroke', '#ff9800').attr('opacity', 1)
-              .attr('marker-end', 'url(#arrow-source)')
-              .attr('marker-start', '');
-          } else {
-            link.attr('stroke', '#555').attr('opacity', 0.05)
-              .attr('marker-end', 'url(#arrow-default)')
-              .attr('marker-start', '');
-          }
-        } else {
-          if (mutualOnly) {
-            if (l.mutual) {
-              link.attr('stroke', '#555').attr('opacity', 0.8)
-                .attr('marker-end', 'url(#arrow-default)')
-                .attr('marker-start', 'url(#arrow-default-rev)');
-            } else {
-              link.attr('stroke', '#555').attr('opacity', 0.08)
-                .attr('marker-end', 'url(#arrow-default)')
-                .attr('marker-start', '');
-            }
-          } else {
-            link.attr('stroke', '#555').attr('opacity', 0.8)
-              .attr('marker-end', 'url(#arrow-default)')
-              .attr('marker-start', l.mutual ? 'url(#arrow-default-rev)' : '');
-          }
-        }
-      });
-    }
+    linkSelection.each(function(l) {
+      const style = getLinkStyle(l, linkSrc(l), linkTgt(l));
+      d3.select(this).attr('stroke', style.c).attr('opacity', style.o).attr('marker-end', style.mE).attr('marker-start', style.mS);
+    });
   }
 
-  // ---- 検索マッチ判定 ----
-  function matchesTitleSearch(d, q) {
-    if (!q) return true;
-    return d.id.toLowerCase().includes(q) || d.title.toLowerCase().includes(q);
-  }
-
-  function matchesAuthorSearch(d, q) {
-    if (!q) return true;
-    const author = (d.author || '').replace(/[{}]/g, '');
-    return author.toLowerCase().includes(q);
-  }
-
-  function isFoundationAuthor(author) {
-    return author === 'SCP財団';
-  }
-
-  // シミュレーションの現在ノード・リンクを取得するヘルパー
-  function getSimNodes() {
-    return nodeSelection ? nodeSelection.data() : [];
-  }
-  function getSimLinks() {
-    return linkSelection ? linkSelection.data() : [];
-  }
-
-  // ノードにフォーカス（SVG中央へ移動）
-  function focusNode(id) {
-    if (!nodeSelection) return;
-    const d = getSimNodes().find(n => n.id === id);
-    if (!d || d.x === undefined) return;
-    const t = d3.zoomTransform(svg.node());
-    svg.transition().duration(400)
-      .call(zoom.transform, d3.zoomIdentity
-        .translate(width / 2 - t.k * d.x, height / 2 - t.k * d.y)
-        .scale(t.k));
-  }
-
-  // ---- リンク関係収集 ----
+  // ---- パネル操作 ----
   function getNodeLinks(nodeId) {
-    const mutuals = [];
-    const targets = [];
-    const sources = [];
-    const seenMutualIds = new Set();
-
+    const res = { mutuals: [], targets: [], sources: [] };
+    const seenMutuals = new Set();
     allLinks.forEach(l => {
-      const sid = linkSrc(l);
-      const tid = linkTgt(l);
+      const sid = linkSrc(l), tid = linkTgt(l);
       if (sid === nodeId && allNodeMap[tid]) {
-        if (isMutual(sid, tid)) {
-          if (!seenMutualIds.has(tid)) {
-            seenMutualIds.add(tid);
-            mutuals.push({ id: tid, node: allNodeMap[tid], count: l.count });
-          }
-        } else {
-          targets.push({ id: tid, node: allNodeMap[tid], count: l.count });
-        }
+        if (isMutual(sid, tid)) { if (!seenMutuals.has(tid)) { seenMutuals.add(tid); res.mutuals.push({ node: allNodeMap[tid], count: l.count }); } }
+        else res.targets.push({ node: allNodeMap[tid], count: l.count });
       }
-      if (tid === nodeId && allNodeMap[sid]) {
-        if (!isMutual(sid, tid)) {
-          sources.push({ id: sid, node: allNodeMap[sid], count: l.count });
-        }
-      }
+      if (tid === nodeId && allNodeMap[sid] && !isMutual(sid, tid)) res.sources.push({ node: allNodeMap[sid], count: l.count });
     });
-
-    return { mutuals, targets, sources };
+    return res;
   }
 
-  // ---- 右パネル更新 ----
-  function updatePanel(nodes, links) {
-    const placeholder = document.getElementById('panel-placeholder');
-    const content = document.getElementById('panel-content');
-
-    if (selectedIds.size === 0) {
-      placeholder.style.display = 'block';
-      content.style.display = 'none';
-      return;
-    }
-
-    placeholder.style.display = 'none';
-    content.style.display = 'block';
-
-    const selectedArr = [...selectedIds].map(id => allNodeMap[id]).filter(Boolean);
-
-    let html = '';
-
-    if (selectedArr.length > 1) {
-      html += `<div class="multi-count">${selectedArr.length}件選択中</div>`;
-    }
-
-    selectedArr.forEach(node => {
-      const { mutuals: mutualNodes, targets, sources } = getNodeLinks(node.id);
-
-      const authorHtml = buildAuthorHtml(node.author);
-      const blockClass = selectedArr.length > 1 ? 'multi-node-block' : '';
-      html += `<div class="${blockClass}">`;
-      html += `<div class="panel-title">${escHtml(node.title)}</div>`;
-      html += `<div class="panel-row"><div class="panel-label">URL</div>${isSafeUrl(node.url) ? `<a href="${escHtml(node.url)}" target="_blank" rel="noopener noreferrer">${escHtml(node.url)}</a>` : escHtml(node.url)}</div>`;
-      html += `<div class="panel-row"><div class="panel-label">著者</div>${authorHtml}</div>`;
-      html += `<div class="panel-row"><div class="panel-label">作成年</div>${node.year}</div>`;
-
-      // 相互リンク一覧
-      html += `<div class="panel-section-header">相互リンク (${mutualNodes.length}件)</div>`;
-      if (mutualNodes.length === 0) {
-        html += `<div style="color:#4a6080;font-size:12px">なし</div>`;
-      } else {
-        mutualNodes.forEach(m => {
-          html += `<span class="panel-link-item" data-node-id="${escHtml(m.node.id)}">${escHtml(m.node.title)}</span>`;
-        });
-      }
-
-      // リンク先（相互リンクを除く）
-      html += `<div class="panel-section-header">リンク先 (${targets.length}件)</div>`;
-      if (targets.length === 0) {
-        html += `<div style="color:#4a6080;font-size:12px">なし</div>`;
-      } else {
-        targets.forEach(t => {
-          html += `<span class="panel-link-item" data-node-id="${escHtml(t.node.id)}">${escHtml(t.node.title)}</span>`;
-        });
-      }
-
-      // 被リンク元（相互リンクを除く）
-      html += `<div class="panel-section-header">被リンク元 (${sources.length}件)</div>`;
-      if (sources.length === 0) {
-        html += `<div style="color:#4a6080;font-size:12px">なし</div>`;
-      } else {
-        sources.forEach(s => {
-          html += `<span class="panel-link-item" data-node-id="${escHtml(s.node.id)}">${escHtml(s.node.title)}</span>`;
-        });
-      }
-
-      html += `</div>`;
-    });
-
-    // コピーボタン
-    html += `<button class="copy-btn" id="copy-btn">Discord形式でコピー</button>`;
-
-    content.innerHTML = html;
-
-    // パネル内リンクをクリックでフォーカス
-    content.querySelectorAll('.panel-link-item').forEach(el => {
-      el.addEventListener('click', () => {
-        const nid = el.dataset.nodeId;
-        selectedIds = new Set([nid]);
-        applyAllFilters();
-        updatePanel(getSimNodes(), getSimLinks());
-        focusNode(nid);
-      });
-    });
-
-    // コピーボタン
-    const copyBtn = document.getElementById('copy-btn');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const text = buildDiscordText(selectedArr);
-        const onCopied = () => {
-          copyBtn.textContent = 'コピーしました！';
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = 'Discord形式でコピー';
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        };
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).then(onCopied).catch(() => {
-            fallbackCopy(text);
-            onCopied();
-          });
-        } else {
-          fallbackCopy(text);
-          onCopied();
-        }
-      });
-    }
-  }
-
-  // ---- Discord形式テキスト生成 ----
-  function buildDiscordText(selectedArr) {
-    const blocks = selectedArr.map(node => {
-      const { mutuals, targets, sources } = getNodeLinks(node.id);
-      const mutualIds = mutuals.map(m => m.id);
-      const targetMap = {};
-      targets.forEach(t => { targetMap[t.id] = (targetMap[t.id] || 0) + t.count; });
-      const sourceMap = {};
-      sources.forEach(s => { sourceMap[s.id] = (sourceMap[s.id] || 0) + s.count; });
-
-      let text = `## ${node.title}\n`;
-
-      if (node.author && node.author !== 'SCP財団' && !node.author.startsWith('{')) {
-        const uname = encodeURIComponent(node.author.replace(/\s+/g, '-'));
-        text += `* [${node.author}](https://www.wikidot.com/user:info/${uname})\n`;
-      } else {
-        text += `* ${node.author || '(不明)'}\n`;
-      }
-      text += `* ${node.url}\n`;
-
-      // 相互リンク
-      if (mutualIds.length > 0) {
-        text += `### 相互リンク\n`;
-        mutualIds.forEach(id => {
-          const mn = allNodeMap[id];
-          if (mn) text += `* ${mn.url}\n`;
-        });
-      }
-
-      // 被リンク
-      const sourceIds = Object.keys(sourceMap);
-      if (sourceIds.length > 0) {
-        text += `### 被リンク\n`;
-        sourceIds.forEach(id => {
-          const sn = allNodeMap[id];
-          if (!sn) return;
-          text += `* ${sn.url} (\u2190${sourceMap[id]})\n`;
-        });
-      }
-
-      // リンク
-      const targetIds = Object.keys(targetMap);
-      if (targetIds.length > 0) {
-        text += `### リンク\n`;
-        targetIds.forEach(id => {
-          const tn = allNodeMap[id];
-          if (!tn) return;
-          text += `* ${tn.url} (\u2192${targetMap[id]})\n`;
-        });
-      }
-
-      return text.trimEnd();
-    });
-
-    return blocks.join('\n\n---\n\n');
-  }
-
-  function fallbackCopy(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-  }
-
-  // ---- 著者HTMLビルダー ----
-  function buildAuthorHtml(author) {
+  const buildAuthorHtml = (author) => {
     if (!author) return '';
-    if (author.startsWith('{')) {
-      // 複数著者: {name1,name2,...} → 各著者をリンク化
-      const names = author.slice(1, -1).split(',');
-      return names.map(name => {
-        const trimmed = name.trim();
-        if (trimmed === 'SCP財団') return escHtml(trimmed);
-        const username = encodeURIComponent(trimmed.replace(/\s+/g, '-'));
-        return `<a href="https://www.wikidot.com/user:info/${username}" target="_blank" rel="noopener noreferrer">${escHtml(trimmed)}</a>`;
-      }).join(', ');
-    }
-    if (author === 'SCP財団') return escHtml(author);
-    const username = encodeURIComponent(author.replace(/\s+/g, '-'));
-    return `<a href="https://www.wikidot.com/user:info/${username}" target="_blank" rel="noopener noreferrer">${escHtml(author)}</a>`;
+    const formatName = (name) => name === 'SCP財団' ? escHtml(name) : `<a href="https://www.wikidot.com/user:info/${encodeURIComponent(name.replace(/\s+/g, '-'))}" target="_blank">${escHtml(name)}</a>`;
+    return author.startsWith('{') ? author.slice(1, -1).split(',').map(n => formatName(n.trim())).join(', ') : formatName(author);
+  };
+
+  const renderPanelSection = (title, items) => {
+    let html = `<div class="panel-section-header">${title} (${items.length}件)</div>`;
+    return html + (items.length ? items.map(i => `<span class="panel-link-item" data-node-id="${escHtml(i.node.id)}">${escHtml(i.node.title)}</span>`).join('') : `<div style="color:#4a6080;font-size:12px">なし</div>`);
+  };
+
+  function updatePanel() {
+    const placeholder = document.getElementById('panel-placeholder'), content = document.getElementById('panel-content');
+    if (!state.selectedIds.size) { placeholder.style.display = 'block'; content.style.display = 'none'; return; }
+    
+    placeholder.style.display = 'none'; content.style.display = 'block';
+    const selectedArr = [...state.selectedIds].map(id => allNodeMap[id]).filter(Boolean);
+    
+    let html = selectedArr.length > 1 ? `<div class="multi-count">${selectedArr.length}件選択中</div>` : '';
+    
+    selectedArr.forEach(node => {
+      const { mutuals, targets, sources } = getNodeLinks(node.id);
+      html += `
+        <div class="${selectedArr.length > 1 ? 'multi-node-block' : ''}">
+          <div class="panel-title">${escHtml(node.title)}</div>
+          <div class="panel-row"><div class="panel-label">URL</div>${isSafeUrl(node.url) ? `<a href="${escHtml(node.url)}" target="_blank">${escHtml(node.url)}</a>` : escHtml(node.url)}</div>
+          <div class="panel-row"><div class="panel-label">著者</div>${buildAuthorHtml(node.author)}</div>
+          <div class="panel-row"><div class="panel-label">作成年</div>${node.year}</div>
+          ${renderPanelSection('相互リンク', mutuals)}
+          ${renderPanelSection('被リンク元', sources)}
+          ${renderPanelSection('リンク先', targets)}
+        </div>`;
+    });
+    
+    content.innerHTML = html + `<button class="copy-btn" id="copy-btn">詳細情報をコピー</button>`;
+
+    content.querySelectorAll('.panel-link-item').forEach(el => el.addEventListener('click', () => {
+      const nid = el.dataset.nodeId;
+      state.selectedIds = new Set([nid]);
+      applyAllFilters();
+      updatePanel();
+      
+      const d = nodeSelection.data().find(n => n.id === nid);
+      if (d && d.x !== undefined) {
+        const t = d3.zoomTransform(svg.node());
+        svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(container.clientWidth / 2 - t.k * d.x, container.clientHeight / 2 - t.k * d.y).scale(t.k));
+      }
+    }));
+
+    document.getElementById('copy-btn')?.addEventListener('click', function() {
+      const text = selectedArr.map(node => {
+        const { mutuals, targets, sources } = getNodeLinks(node.id);
+        const mapCounts = (arr) => arr.reduce((acc, curr) => ({...acc, [curr.node.id]: (acc[curr.node.id]||0) + curr.count}), {});
+        const tMap = mapCounts(targets), sMap = mapCounts(sources);
+        
+        let t = `## ${node.title}\n* ${node.author && node.author !== 'SCP財団' && !node.author.startsWith('{') ? `[${node.author}](https://www.wikidot.com/user:info/${encodeURIComponent(node.author.replace(/\s+/g, '-'))})` : (node.author || '(不明)')}\n* ${node.url}\n`;
+        if (mutuals.length) t += `### 相互リンク\n` + mutuals.map(m => `* ${m.node.url}\n`).join('');
+        if (sources.length) t += `### 被リンク\n` + Object.keys(sMap).map(id => `* ${allNodeMap[id].url} (\u2190${sMap[id]})\n`).join('');
+        if (targets.length) t += `### リンク\n` + Object.keys(tMap).map(id => `* ${allNodeMap[id].url} (\u2192${tMap[id]})\n`).join('');
+        return t.trimEnd();
+      }).join('\n\n---\n\n');
+
+      const btn = this;
+      const onCopied = () => { btn.textContent = 'コピーしました！'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = 'Discord形式でコピー'; btn.classList.remove('copied'); }, 2000); };
+      
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(onCopied).catch(onCopied);
+      else { const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); onCopied(); }
+    });
   }
 
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
+  // ---- イベント登録の共通化 ----
+  const bindInput = (id, key, parser = v => v) => document.getElementById(id).addEventListener('input', e => { state[key] = parser(e.target.value); applyAllFilters(); });
+  const bindToggle = (id, key) => document.getElementById(id).addEventListener('click', function() { state[key] = !state[key]; this.classList.toggle('active', state[key]); applyAllFilters(); });
 
-  function isSafeUrl(url) {
-    return /^https?:\/\//i.test(url);
-  }
-
-  // ---- コントロール イベント ----
-  document.getElementById('yearFilter').addEventListener('input', function() {
-    const v = parseInt(this.value, 10);
-    yearFilterVal = isNaN(v) ? null : v;
-    applyAllFilters();
-  });
-
-  document.getElementById('mutualOnly').addEventListener('click', function() {
-    mutualOnly = !mutualOnly;
-    this.classList.toggle('active', mutualOnly);
-    applyAllFilters();
-  });
-
-  document.getElementById('searchTitle').addEventListener('input', function() {
-    searchTitleQuery = this.value.trim();
-    applyAllFilters();
-  });
-
-  document.getElementById('searchAuthor').addEventListener('input', function() {
-    searchAuthorQuery = this.value.trim();
-    applyAllFilters();
-  });
+  bindInput('yearFilter', 'yearFilterVal', v => isNaN(parseInt(v, 10)) ? null : parseInt(v, 10));
+  bindInput('searchTitle', 'searchTitle', v => v.trim());
+  bindInput('searchAuthor', 'searchAuthor', v => v.trim());
+  bindToggle('mutualOnly', 'mutualOnly');
+  bindToggle('excludeFoundation', 'excludeFoundation');
 
   document.getElementById('densitySlider').addEventListener('input', function() {
-    if (simulation) {
-      simulation.force('charge', d3.forceManyBody().strength(-parseInt(this.value)));
-      simulation.alpha(0.5).restart();
-    }
+    if (simulation) simulation.force('charge', d3.forceManyBody().strength(-parseInt(this.value))).alpha(0.5).restart();
   });
 
-  document.getElementById('excludeFoundation').addEventListener('click', function() {
-    excludeFoundation = !excludeFoundation;
-    this.classList.toggle('active', excludeFoundation);
-    applyAllFilters();
-  });
-
-  // ---- リサイズ ----
   window.addEventListener('resize', () => {
-    width = container.clientWidth;
-    height = container.clientHeight;
-    if (simulation) {
-      simulation.force('center', d3.forceCenter(width / 2, height / 2));
-      simulation.alpha(0.1).restart();
-    }
+    if (simulation) simulation.force('center', d3.forceCenter(container.clientWidth / 2, container.clientHeight / 2)).alpha(0.1).restart();
   });
 
-  // ---- 初回描画 ----
   buildGraph();
 });
 </script>
 </body>
-</html>
+</html
