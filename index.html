@@ -336,6 +336,10 @@
       <span>X年以前を強調:</span>
       <input type="number" id="yearFilter" placeholder="例: 2021" min="2013" max="2030" style="width:80px">
     </label>
+    <label>
+      <span>密度:</span>
+      <input type="range" id="densitySlider" min="50" max="500" value="200" style="width:100px">
+    </label>
     <button class="toggle-btn" id="mutualOnly">相互リンクのみ表示</button>
     <button class="toggle-btn" id="excludeFoundation">SCP財団以外を表示</button>
   </div>
@@ -347,7 +351,7 @@
     <div id="legend">
       <div class="legend-title">凡例</div>
       <div class="legend-item">
-        <span class="legend-dot" style="background:#ffd700"></span>選択中
+        <span class="legend-dot" style="background:#808080"></span>選択中
       </div>
       <div class="legend-item">
         <span class="legend-dot" style="background:#e05030"></span>相互リンク
@@ -400,6 +404,14 @@ fetch('./data.json').then(r => r.json()).then(data => {
       const key = sid < tid ? `${sid}|${tid}` : `${tid}|${sid}`;
       mutualPairs.add(key);
     }
+  });
+
+  // 相互リンクに関与するノードIDのSet
+  const mutualNodeIds = new Set();
+  mutualPairs.forEach(key => {
+    const [a, b] = key.split('|');
+    mutualNodeIds.add(a);
+    mutualNodeIds.add(b);
   });
 
   function isMutual(a, b) {
@@ -500,14 +512,8 @@ fetch('./data.json').then(r => r.json()).then(data => {
     gLinks.selectAll('*').remove();
     gNodes.selectAll('*').remove();
 
-    // 表示するリンクを決定
-    let visibleLinks = mutualOnly
-      ? allLinks.filter(l => {
-          const sid = typeof l.source === 'object' ? l.source.id : l.source;
-          const tid = typeof l.target === 'object' ? l.target.id : l.target;
-          return isMutual(sid, tid);
-        })
-      : allLinks;
+    // 常に全リンクを表示（mutualOnlyはdim方式で制御）
+    let visibleLinks = allLinks;
 
     // 相互リンクは片方向のみ残す（id が小さい方→大きい方）
     const seenMutualPairs = new Set();
@@ -538,8 +544,8 @@ fetch('./data.json').then(r => r.json()).then(data => {
     // シミュレーション初期化
     if (simulation) simulation.stop();
     simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(80))
-      .force('charge', d3.forceManyBody().strength(-200))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(d => d.mutual ? 40 : 120))
+      .force('charge', d3.forceManyBody().strength(-parseInt(document.getElementById('densitySlider').value)))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collision', d3.forceCollide().radius(d => nodeRadius(inDegreeMap[d.id] || 0) + 5));
 
@@ -708,15 +714,16 @@ fetch('./data.json').then(r => r.json()).then(data => {
       const passTitleSearch = !hasTitleSearch || matchesTitleSearch(d, qt);
       const passAuthorSearch = !hasAuthorSearch || matchesAuthorSearch(d, qa);
       const passFoundation = !excludeFoundation || !isFoundationAuthor(d.author);
-      const visible = passSelection && passYear && passTitleSearch && passAuthorSearch && passFoundation;
+      const passMutual = !mutualOnly || mutualNodeIds.has(d.id);
+      const visible = passSelection && passYear && passTitleSearch && passAuthorSearch && passFoundation && passMutual;
 
       node.select('circle')
-        .attr('fill', isSelected ? '#ffd700'
+        .attr('fill', isSelected ? '#808080'
           : isMutualLinked ? '#e05030'
           : isTarget ? '#4caf50'
           : isSource ? '#ff9800'
           : '#4a9eff')
-        .attr('stroke', isSelected ? '#b8960a' : '#1a3060')
+        .attr('stroke', isSelected ? '#606060' : '#1a3060')
         .attr('opacity', visible ? 1 : 0.08);
 
       const c = linkedCounts[d.id];
@@ -729,11 +736,11 @@ fetch('./data.json').then(r => r.json()).then(data => {
           return parts.join(' ');
         });
 
+      const isSearchHighlighted = (hasTitleSearch && matchesTitleSearch(d, qt)) || (hasAuthorSearch && matchesAuthorSearch(d, qa));
       node.select('text.node-label')
         .attr('display', visible ? null : 'none')
-        .attr('fill',
-          (hasTitleSearch && matchesTitleSearch(d, qt)) || (hasAuthorSearch && matchesAuthorSearch(d, qa))
-            ? '#ffd700' : '#8aa8cc');
+        .attr('fill', isSelected ? 'white' : isSearchHighlighted ? '#ffd700' : '#8aa8cc')
+        .attr('font-weight', isSelected ? 'bold' : 'normal');
     });
 
     // リンクの色・不透明度
@@ -747,7 +754,23 @@ fetch('./data.json').then(r => r.json()).then(data => {
           const selectedHasSrc = selectedIds.has(sid);
           const selectedHasTgt = selectedIds.has(tid);
 
-          if (l.mutual && (selectedHasSrc || selectedHasTgt)) {
+          // mutualOnly時、非mutualリンクは常にdimmed
+          if (mutualOnly && !l.mutual) {
+            link.attr('stroke', '#555').attr('opacity', 0.08)
+              .attr('marker-end', 'url(#arrow-default)')
+              .attr('marker-start', '');
+          } else if (selectedHasSrc && selectedHasTgt) {
+            // 両端が選択されたリンク
+            if (l.mutual) {
+              link.attr('stroke', '#e05030').attr('opacity', 1)
+                .attr('marker-end', 'url(#arrow-mutual)')
+                .attr('marker-start', 'url(#arrow-mutual-rev)');
+            } else {
+              link.attr('stroke', '#555').attr('opacity', 0.8)
+                .attr('marker-end', 'url(#arrow-default)')
+                .attr('marker-start', '');
+            }
+          } else if (l.mutual && (selectedHasSrc || selectedHasTgt)) {
             link.attr('stroke', '#e05030').attr('opacity', 1)
               .attr('marker-end', 'url(#arrow-mutual)')
               .attr('marker-start', 'url(#arrow-mutual-rev)');
@@ -765,10 +788,24 @@ fetch('./data.json').then(r => r.json()).then(data => {
               .attr('marker-start', '');
           }
         } else {
-          // 未選択時: 相互リンクも含めすべて灰色で統一
-          link.attr('stroke', '#555').attr('opacity', 0.8)
-            .attr('marker-end', 'url(#arrow-default)')
-            .attr('marker-start', l.mutual ? 'url(#arrow-default-rev)' : '');
+          if (mutualOnly) {
+            if (l.mutual) {
+              // 相互リンクは通常表示
+              link.attr('stroke', '#555').attr('opacity', 0.8)
+                .attr('marker-end', 'url(#arrow-default)')
+                .attr('marker-start', 'url(#arrow-default-rev)');
+            } else {
+              // 非相互リンクはdimmed
+              link.attr('stroke', '#555').attr('opacity', 0.08)
+                .attr('marker-end', 'url(#arrow-default)')
+                .attr('marker-start', '');
+            }
+          } else {
+            // 未選択時: 相互リンクも含めすべて灰色で統一
+            link.attr('stroke', '#555').attr('opacity', 0.8)
+              .attr('marker-end', 'url(#arrow-default)')
+              .attr('marker-start', l.mutual ? 'url(#arrow-default-rev)' : '');
+          }
         }
       });
     }
@@ -1060,9 +1097,7 @@ fetch('./data.json').then(r => r.json()).then(data => {
   document.getElementById('mutualOnly').addEventListener('click', function() {
     mutualOnly = !mutualOnly;
     this.classList.toggle('active', mutualOnly);
-    selectedIds.clear();
-    buildGraph();
-    updatePanel([], []);
+    applyAllFilters();
   });
 
   document.getElementById('searchTitle').addEventListener('input', function() {
@@ -1073,6 +1108,13 @@ fetch('./data.json').then(r => r.json()).then(data => {
   document.getElementById('searchAuthor').addEventListener('input', function() {
     searchAuthorQuery = this.value.trim();
     applyAllFilters();
+  });
+
+  document.getElementById('densitySlider').addEventListener('input', function() {
+    if (simulation) {
+      simulation.force('charge', d3.forceManyBody().strength(-parseInt(this.value)));
+      simulation.alpha(0.5).restart();
+    }
   });
 
   document.getElementById('excludeFoundation').addEventListener('click', function() {
