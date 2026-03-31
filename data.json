@@ -130,7 +130,7 @@
     },
     {
       "id": "contact-staff",
-      "title": "SCP財団参加の手引き",
+      "title": "サイトへのお問い合わせ",
       "url": "http://scp-jp.wikidot.com/contact-staff",
       "author": "m0ch12uk1",
       "createdAt": "2013/7/8",
@@ -752,6 +752,11 @@
     {
       "source": "frequently-asked-questions",
       "target": "meet-the-staff-jp",
+      "count": 1
+    },
+    {
+      "source": "frequently-asked-questions",
+      "target": "discord-guideline",
       "count": 1
     },
     {
