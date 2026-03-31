@@ -3,7 +3,6 @@
 # dependencies = []
 # ///
 
-import csv
 import json
 import os
 import re
@@ -22,6 +21,9 @@ DOMAIN_PATTERN = re.compile(
 MAGIC_URI_PATTERN = re.compile(
     r"/(title|noredirect|tags|parentPage|norender)/.*$"
 )
+
+# 平仮名・片仮名・アットマークの検出用（URLエンコードされたものはマッチしない）
+INVALID_CHARS_PATTERN = re.compile(r"[\u3040-\u309F\u30A0-\u30FF@]")
 
 # パターンA: [[[...]]] 形式（URLを含む [[[*http://...]]] も対象）
 PATTERN_A = re.compile(r"\[\[\[(\*?[^\]|#\n]+?)(?:\|[^\]]*?)?\]\]\]")
@@ -69,6 +71,26 @@ def normalize_url(raw: str) -> str:
     return url
 
 
+def is_valid_url(url: str) -> bool:
+    """正規化されたURLスラグが保存対象として適切か判定する。"""
+    if not url:
+        return False
+    
+    # 対象ドメイン以外の外部リンクを除外
+    if url.startswith("http://") or url.startswith("https://"):
+        return False
+        
+    # 指定されたパス空間の除外
+    if url.startswith("system:page-tags") or url.startswith("forum/"):
+        return False
+        
+    # 平仮名、片仮名、アットマークを含むものを除外
+    if INVALID_CHARS_PATTERN.search(url):
+        return False
+        
+    return True
+
+
 def extract_links_from_file(content: str) -> list[str]:
     """ftmlコンテンツからリンク先URLスラグのリストを返す。"""
     found = []
@@ -77,19 +99,22 @@ def extract_links_from_file(content: str) -> list[str]:
     for m in PATTERN_A.finditer(content):
         raw = m.group(1).strip()
         normalized = normalize_url(raw)
-        found.append(normalized)
+        if is_valid_url(normalized):
+            found.append(normalized)
 
     # パターンB
     for m in PATTERN_B.finditer(content):
         raw = m.group(1)
         normalized = normalize_url(raw)
-        found.append(normalized)
+        if is_valid_url(normalized):
+            found.append(normalized)
 
     # パターンC（パターンBと重複しないように、単純な裸URLのみ対象）
     for m in PATTERN_C.finditer(content):
         raw = m.group(1)
         normalized = normalize_url(raw)
-        found.append(normalized)
+        if is_valid_url(normalized):
+            found.append(normalized)
 
     return found
 
@@ -146,16 +171,27 @@ def parse_file_list(path: str) -> list[dict]:
 
 def scan_links(
     ftml_entries: list[tuple[str, str]], known_urls: set[str]
-) -> dict[tuple[str, str], int]:
-    """ftmlエントリからリンクカウントを返す。"""
+) -> tuple[dict[tuple[str, str], int], dict[str, dict[str, int]]]:
+    """ftmlエントリからリンクカウントと全抽出リンクを返す。"""
     link_counts: dict[tuple[str, str], int] = defaultdict(int)
+    extracted: dict[str, dict[str, int]] = {}
     for source, ftml_path in ftml_entries:
         with open(ftml_path, encoding="utf-8") as f:
             content = f.read()
-        for target in extract_links_from_file(content):
+        links = extract_links_from_file(content)
+        counts: dict[str, int] = defaultdict(int)
+        for target in links:
+            counts[target] += 1
+
+        # すべての抽出リンクを保存
+        extracted[source] = dict(counts)
+
+        # 既知のURLへのリンクのみカウント
+        for target, cnt in counts.items():
             if target in known_urls and target != source:
-                link_counts[(source, target)] += 1
-    return link_counts
+                link_counts[(source, target)] += cnt
+
+    return link_counts, extracted
 
 
 def main() -> None:
@@ -180,31 +216,35 @@ def main() -> None:
         )
         known_urls.add(url_slug)
 
-    # ftml/ が存在しなければ作成し、ftml/ 外の引数ファイルを移動
+    # 引数で渡されたファイルの処理（フィルタリングと移動）
     arg_paths = sys.argv[1:]
+    valid_args: list[tuple[str, str]] = []
+    
     if arg_paths:
         os.makedirs(FTML_DIR, exist_ok=True)
-        moved = []
         for path in arg_paths:
+            slug = os.path.splitext(os.path.basename(path))[0]
+            if slug not in known_urls:
+                print(f"警告: {slug} はfile-list.csvに含まれていません。移動・処理をスキップします。")
+                continue
+
             dest = os.path.join(FTML_DIR, os.path.basename(path))
+            # ftml/以下のファイルが渡された場合など、移動元と先が同じなら移動しない
             if os.path.abspath(path) != os.path.abspath(dest):
-                os.rename(path, dest)
-                print(f"移動: {path} → {dest}")
-            moved.append(dest)
-        arg_paths = moved
+                if os.path.exists(path):
+                    os.rename(path, dest)
+                    print(f"移動: {path} → {dest}")
+                else:
+                    print(f"警告: {path} が見つかりません。スキップします。")
+                    continue
+            valid_args.append((slug, dest))
 
     # 処理対象の (slug, ftml_path) リストを構築
     ftml_entries: list[tuple[str, str]] = []
     if arg_paths:
-        for ftml_path in arg_paths:
-            slug = os.path.splitext(os.path.basename(ftml_path))[0]
-            if slug not in known_urls:
-                print(f"警告: {slug} はfile-list.csvに含まれていません。スキップします。")
-                continue
-            if not os.path.exists(ftml_path):
-                print(f"警告: {ftml_path} が見つかりません。スキップします。")
-                continue
-            ftml_entries.append((slug, ftml_path))
+        for slug, ftml_path in valid_args:
+            if os.path.exists(ftml_path):
+                ftml_entries.append((slug, ftml_path))
     elif os.path.isdir(FTML_DIR):
         for node in all_nodes:
             ftml_path = os.path.join(FTML_DIR, f"{node['id']}.ftml")
@@ -214,26 +254,65 @@ def main() -> None:
         print(f"警告: {FTML_DIR} が見つかりません。リンクなしで続行します。")
 
     # data.json が存在し引数指定ありの場合はインクリメンタル更新
-    incremental = arg_paths and os.path.exists(OUTPUT)
+    incremental = bool(arg_paths) and os.path.exists(OUTPUT)
+
     if incremental:
         with open(OUTPUT, encoding="utf-8") as f:
             existing = json.load(f)
 
         target_slugs = {slug for slug, _ in ftml_entries}
-        # 既存ノードを維持しつつ対象ノードのみ更新
-        nodes_by_id = {n["id"]: n for n in existing["nodes"]}
-        nodes_by_id.update({n["id"]: n for n in all_nodes if n["id"] in target_slugs})
+
+        # 既存ノードを維持 (file-listから削除されたものを除外するために known_urls を確認)
+        nodes_by_id = {n["id"]: n for n in existing.get("nodes", []) if n["id"] in known_urls}
+        
+        # 新規ファイルからリンクをスキャン
+        new_link_counts, new_extracted = scan_links(ftml_entries, known_urls)
+
+        for n in all_nodes:
+            slug = n["id"]
+            if slug in target_slugs:
+                # 引数で更新されたノード
+                n["extracted_links"] = new_extracted.get(slug, {})
+                nodes_by_id[slug] = n
+            elif slug in nodes_by_id:
+                # 更新対象外ノード（基本情報は更新しつつ、以前のリンク抽出結果は維持）
+                existing_extracted = nodes_by_id[slug].get("extracted_links", {})
+                n["extracted_links"] = existing_extracted
+                nodes_by_id[slug] = n
+
         nodes = list(nodes_by_id.values())
 
-        # 対象slugのリンクを除いて既存リンクを保持し、再スキャン結果をマージ
         link_counts: dict[tuple[str, str], int] = defaultdict(int)
-        for link in existing["links"]:
-            if link["source"] not in target_slugs:
-                link_counts[(link["source"], link["target"])] = link["count"]
-        link_counts.update(scan_links(ftml_entries, known_urls))
+        
+        # 1. 更新対象外ノードの既存リンクを維持
+        for link in existing.get("links", []):
+            src, tgt = link["source"], link["target"]
+            if src not in target_slugs and src in known_urls and tgt in known_urls:
+                link_counts[(src, tgt)] = link["count"]
+                
+        # 2. 引数対象ノードの新しいリンクを追加
+        for (src, tgt), cnt in new_link_counts.items():
+            link_counts[(src, tgt)] = cnt
+
+        # 3. 引数対象ノードに向けられた「既存ノードからの被リンク」を更新
+        # data.json に保持している extracted_links を使い、既存ノードの参照を再現
+        for node in nodes_by_id.values():
+            src = node["id"]
+            if src in target_slugs:
+                continue
+            extracted = node.get("extracted_links", {})
+            for tgt, cnt in extracted.items():
+                if tgt in target_slugs and tgt != src:
+                    link_counts[(src, tgt)] = cnt
+
     else:
-        nodes = all_nodes
-        link_counts = scan_links(ftml_entries, known_urls)
+        # フル更新
+        link_counts, new_extracted = scan_links(ftml_entries, known_urls)
+        nodes = []
+        for n in all_nodes:
+            slug = n["id"]
+            n["extracted_links"] = new_extracted.get(slug, {})
+            nodes.append(n)
 
     links = [
         {"source": src, "target": tgt, "count": cnt}
