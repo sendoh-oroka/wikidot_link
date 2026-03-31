@@ -393,12 +393,10 @@ fetch('./data.json').then(r => r.json()).then(data => {
   // 相互リンクペアを事前計算 (Set of "id1|id2" where id1 < id2)
   const mutualPairs = new Set();
   allLinks.forEach(l => {
-    const sid = typeof l.source === 'object' ? l.source.id : l.source;
-    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    const sid = linkSrc(l);
+    const tid = linkTgt(l);
     const reverse = allLinks.some(ll => {
-      const ls = typeof ll.source === 'object' ? ll.source.id : ll.source;
-      const lt = typeof ll.target === 'object' ? ll.target.id : ll.target;
-      return ls === tid && lt === sid;
+      return linkSrc(ll) === tid && linkTgt(ll) === sid;
     });
     if (reverse) {
       const key = sid < tid ? `${sid}|${tid}` : `${tid}|${sid}`;
@@ -419,11 +417,14 @@ fetch('./data.json').then(r => r.json()).then(data => {
     return mutualPairs.has(key);
   }
 
+  function linkSrc(l) { return typeof l.source === 'object' ? l.source.id : l.source; }
+  function linkTgt(l) { return typeof l.target === 'object' ? l.target.id : l.target; }
+
   // in-degreeの計算
   const inDegreeMap = {};
   allNodes.forEach(n => { inDegreeMap[n.id] = 0; });
   allLinks.forEach(l => {
-    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    const tid = linkTgt(l);
     if (inDegreeMap[tid] !== undefined) inDegreeMap[tid]++;
   });
 
@@ -519,8 +520,8 @@ fetch('./data.json').then(r => r.json()).then(data => {
     const seenMutualPairs = new Set();
     const deduped = [];
     visibleLinks.forEach(l => {
-      const sid = typeof l.source === 'object' ? l.source.id : l.source;
-      const tid = typeof l.target === 'object' ? l.target.id : l.target;
+      const sid = linkSrc(l);
+      const tid = linkTgt(l);
       if (isMutual(sid, tid)) {
         const key = sid < tid ? `${sid}|${tid}` : `${tid}|${sid}`;
         if (!seenMutualPairs.has(key)) {
@@ -677,8 +678,8 @@ fetch('./data.json').then(r => r.json()).then(data => {
 
     if (hasSelection) {
       allLinks.forEach(l => {
-        const sid = typeof l.source === 'object' ? l.source.id : l.source;
-        const tid = typeof l.target === 'object' ? l.target.id : l.target;
+        const sid = linkSrc(l);
+        const tid = linkTgt(l);
         if (selectedIds.has(sid) && !selectedIds.has(tid)) {
           if (isMutual(sid, tid)) {
             linkedMutual.add(tid);
@@ -746,8 +747,8 @@ fetch('./data.json').then(r => r.json()).then(data => {
     // リンクの色・不透明度
     if (linkSelection) {
       linkSelection.each(function(l) {
-        const sid = typeof l.source === 'object' ? l.source.id : l.source;
-        const tid = typeof l.target === 'object' ? l.target.id : l.target;
+        const sid = linkSrc(l);
+        const tid = linkTgt(l);
         const link = d3.select(this);
 
         if (hasSelection) {
@@ -847,6 +848,36 @@ fetch('./data.json').then(r => r.json()).then(data => {
         .scale(t.k));
   }
 
+  // ---- リンク関係収集 ----
+  function getNodeLinks(nodeId) {
+    const mutuals = [];
+    const targets = [];
+    const sources = [];
+    const seenMutualIds = new Set();
+
+    allLinks.forEach(l => {
+      const sid = linkSrc(l);
+      const tid = linkTgt(l);
+      if (sid === nodeId && allNodeMap[tid]) {
+        if (isMutual(sid, tid)) {
+          if (!seenMutualIds.has(tid)) {
+            seenMutualIds.add(tid);
+            mutuals.push({ id: tid, node: allNodeMap[tid], count: l.count });
+          }
+        } else {
+          targets.push({ id: tid, node: allNodeMap[tid], count: l.count });
+        }
+      }
+      if (tid === nodeId && allNodeMap[sid]) {
+        if (!isMutual(sid, tid)) {
+          sources.push({ id: sid, node: allNodeMap[sid], count: l.count });
+        }
+      }
+    });
+
+    return { mutuals, targets, sources };
+  }
+
   // ---- 右パネル更新 ----
   function updatePanel(nodes, links) {
     const placeholder = document.getElementById('panel-placeholder');
@@ -870,31 +901,7 @@ fetch('./data.json').then(r => r.json()).then(data => {
     }
 
     selectedArr.forEach(node => {
-      // allLinksベースでリンク関係を収集
-      const mutualNodes = []; // 相互リンク
-      const targets = [];     // リンク先（相互を除く）
-      const sources = [];     // 被リンク元（相互を除く）
-      const seenMutualIds = new Set();
-
-      allLinks.forEach(l => {
-        const sid = typeof l.source === 'object' ? l.source.id : l.source;
-        const tid = typeof l.target === 'object' ? l.target.id : l.target;
-        if (sid === node.id && allNodeMap[tid]) {
-          if (isMutual(sid, tid)) {
-            if (!seenMutualIds.has(tid)) {
-              seenMutualIds.add(tid);
-              mutualNodes.push({ node: allNodeMap[tid], count: l.count });
-            }
-          } else {
-            targets.push({ node: allNodeMap[tid], count: l.count });
-          }
-        }
-        if (tid === node.id && allNodeMap[sid]) {
-          if (!isMutual(sid, tid)) {
-            sources.push({ node: allNodeMap[sid], count: l.count });
-          }
-        }
-      });
+      const { mutuals: mutualNodes, targets, sources } = getNodeLinks(node.id);
 
       const authorHtml = buildAuthorHtml(node.author);
       const blockClass = selectedArr.length > 1 ? 'multi-node-block' : '';
@@ -958,29 +965,23 @@ fetch('./data.json').then(r => r.json()).then(data => {
     if (copyBtn) {
       copyBtn.addEventListener('click', () => {
         const text = buildDiscordText(selectedArr);
-        navigator.clipboard.writeText(text).then(() => {
+        const onCopied = () => {
           copyBtn.textContent = 'コピーしました！';
           copyBtn.classList.add('copied');
           setTimeout(() => {
             copyBtn.textContent = 'Discord形式でコピー';
             copyBtn.classList.remove('copied');
           }, 2000);
-        }).catch(() => {
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          copyBtn.textContent = 'コピーしました！';
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = 'Discord形式でコピー';
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        });
+        };
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(onCopied).catch(() => {
+            fallbackCopy(text);
+            onCopied();
+          });
+        } else {
+          fallbackCopy(text);
+          onCopied();
+        }
       });
     }
   }
@@ -988,26 +989,12 @@ fetch('./data.json').then(r => r.json()).then(data => {
   // ---- Discord形式テキスト生成 ----
   function buildDiscordText(selectedArr) {
     const blocks = selectedArr.map(node => {
-      const mutualIds = [];
+      const { mutuals, targets, sources } = getNodeLinks(node.id);
+      const mutualIds = mutuals.map(m => m.id);
       const targetMap = {};
+      targets.forEach(t => { targetMap[t.id] = (targetMap[t.id] || 0) + t.count; });
       const sourceMap = {};
-
-      allLinks.forEach(l => {
-        const sid = typeof l.source === 'object' ? l.source.id : l.source;
-        const tid = typeof l.target === 'object' ? l.target.id : l.target;
-        if (sid === node.id && allNodeMap[tid]) {
-          if (isMutual(sid, tid)) {
-            if (!mutualIds.includes(tid)) mutualIds.push(tid);
-          } else {
-            targetMap[tid] = (targetMap[tid] || 0) + l.count;
-          }
-        }
-        if (tid === node.id && allNodeMap[sid]) {
-          if (!isMutual(sid, tid)) {
-            sourceMap[sid] = (sourceMap[sid] || 0) + l.count;
-          }
-        }
-      });
+      sources.forEach(s => { sourceMap[s.id] = (sourceMap[s.id] || 0) + s.count; });
 
       let text = `## ${node.title}\n`;
 
@@ -1054,6 +1041,17 @@ fetch('./data.json').then(r => r.json()).then(data => {
     });
 
     return blocks.join('\n\n---\n\n');
+  }
+
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
   }
 
   // ---- 著者HTMLビルダー ----
