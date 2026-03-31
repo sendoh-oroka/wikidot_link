@@ -91,11 +91,17 @@ uv run extract_links.py new-page.ftml
 ```
 
 2. 既存のページの更新
-```
+```sh
 # 1. ftml/ に移動し該当ファイルを編集
 
 # 2. data.json を更新
 uv run extract_links.py
+```
+```sh
+# 1. 更新した内容のftmlファイルを用意
+
+# 2. data.jsonを更新
+uv run extract_links.py new-page.ftml
 ```
 
 3. ページの削除
