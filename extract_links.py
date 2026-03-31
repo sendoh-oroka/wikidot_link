@@ -180,15 +180,16 @@ def main() -> None:
         )
         known_urls.add(url_slug)
 
-    # ftml/ が存在しない場合は作成して引数ファイルを移動
+    # ftml/ が存在しなければ作成し、ftml/ 外の引数ファイルを移動
     arg_paths = sys.argv[1:]
-    if arg_paths and not os.path.isdir(FTML_DIR):
-        os.makedirs(FTML_DIR)
+    if arg_paths:
+        os.makedirs(FTML_DIR, exist_ok=True)
         moved = []
         for path in arg_paths:
             dest = os.path.join(FTML_DIR, os.path.basename(path))
-            os.rename(path, dest)
-            print(f"移動: {path} → {dest}")
+            if os.path.abspath(path) != os.path.abspath(dest):
+                os.rename(path, dest)
+                print(f"移動: {path} → {dest}")
             moved.append(dest)
         arg_paths = moved
 
