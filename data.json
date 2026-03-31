@@ -100,9 +100,9 @@
       "id": "faq-jp",
       "title": "FAQ",
       "url": "http://scp-jp.wikidot.com/faq-jp",
-      "author": "Kwana",
-      "createdAt": "2013/12/20",
-      "year": 2013
+      "author": "SCP財団",
+      "createdAt": "2026/4/1",
+      "year": 2026
     },
     {
       "id": "frequently-asked-questions",
@@ -638,6 +638,16 @@
     },
     {
       "source": "faq-jp",
+      "target": "arukikata-kai",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "contact-staff",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
       "target": "criticism-policy",
       "count": 1
     },
@@ -653,13 +663,8 @@
     },
     {
       "source": "faq-jp",
-      "target": "frequently-asked-questions",
-      "count": 1
-    },
-    {
-      "source": "faq-jp",
       "target": "how-to-write:how-to-write",
-      "count": 2
+      "count": 1
     },
     {
       "source": "faq-jp",
@@ -668,7 +673,12 @@
     },
     {
       "source": "faq-jp",
-      "target": "system:join",
+      "target": "other-link-hub",
+      "count": 1
+    },
+    {
+      "source": "faq-jp",
+      "target": "sandbox3guide",
       "count": 1
     },
     {

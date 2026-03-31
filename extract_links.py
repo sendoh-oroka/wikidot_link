@@ -170,10 +170,10 @@ def main() -> None:
     # link_counts[(source, target)] = count
     link_counts: dict[tuple[str, str], int] = defaultdict(int)
 
+    # 処理対象の (slug, ftml_path) リストを構築
+    ftml_entries: list[tuple[str, str]] = []
     if len(sys.argv) > 1:
-        # 引数で指定されたファイルを処理
-        ftml_files = sys.argv[1:]
-        for ftml_path in ftml_files:
+        for ftml_path in sys.argv[1:]:
             slug = os.path.splitext(os.path.basename(ftml_path))[0]
             if slug not in known_urls:
                 print(f"警告: {slug} はfile-list.csvに含まれていません。スキップします。")
@@ -181,35 +181,21 @@ def main() -> None:
             if not os.path.exists(ftml_path):
                 print(f"警告: {ftml_path} が見つかりません。スキップします。")
                 continue
-            with open(ftml_path, encoding="utf-8") as f:
-                content = f.read()
-            source = slug
-            targets = extract_links_from_file(content)
-            for target in targets:
-                if target not in known_urls:
-                    continue
-                if target == source:
-                    continue
-                link_counts[(source, target)] += 1
+            ftml_entries.append((slug, ftml_path))
+    elif os.path.isdir(FTML_DIR):
+        for node in nodes:
+            ftml_path = os.path.join(FTML_DIR, f"{node['id']}.ftml")
+            if os.path.exists(ftml_path):
+                ftml_entries.append((node["id"], ftml_path))
     else:
-        # 従来通りFTML_DIR内の全ファイルを走査
-        if not os.path.isdir(FTML_DIR):
-            print(f"警告: {FTML_DIR} が見つかりません。リンクなしで続行します。")
-        else:
-            for node in nodes:
-                ftml_path = os.path.join(FTML_DIR, f"{node['id']}.ftml")
-                if not os.path.exists(ftml_path):
-                    continue
-                with open(ftml_path, encoding="utf-8") as f:
-                    content = f.read()
-                source = node["id"]
-                targets = extract_links_from_file(content)
-                for target in targets:
-                    if target not in known_urls:
-                        continue
-                    if target == source:
-                        continue
-                    link_counts[(source, target)] += 1
+        print(f"警告: {FTML_DIR} が見つかりません。リンクなしで続行します。")
+
+    for source, ftml_path in ftml_entries:
+        with open(ftml_path, encoding="utf-8") as f:
+            content = f.read()
+        for target in extract_links_from_file(content):
+            if target in known_urls and target != source:
+                link_counts[(source, target)] += 1
 
     links = [
         {"source": src, "target": tgt, "count": cnt}
