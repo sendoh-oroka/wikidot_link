@@ -746,6 +746,11 @@
     },
     {
       "source": "frequently-asked-questions",
+      "target": "discord-guideline",
+      "count": 1
+    },
+    {
+      "source": "frequently-asked-questions",
       "target": "meet-the-staff-jp",
       "count": 1
     },
