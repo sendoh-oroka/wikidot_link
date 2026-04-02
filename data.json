@@ -623,10 +623,10 @@
     },
     {
       "id": "faq-jp",
-      "title": "FAQ",
+      "title": "よくある質問",
       "url": "http://scp-jp.wikidot.com/faq-jp",
       "author": "SCP財団",
-      "createdAt": "2026/4/1",
+      "createdAt": "2026/4/2",
       "year": 2026,
       "extracted_links": {
         "guide-for-newbies": 5,
